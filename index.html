@@ -111,7 +111,7 @@
     .sheet-head nav a { white-space: nowrap; }
 
     /* Hero */
-    .hero { display: grid; grid-template-columns: 1fr; gap: 3rem; padding: 3rem 0 3.5rem; }
+    .hero { display: grid; grid-template-columns: 1fr; gap: 3rem; padding: 3rem 0 4rem; }
     @media (min-width: 900px) { .hero { grid-template-columns: 1.05fr 1fr; gap: 3.5rem; align-items: center; padding: 4.5rem 0 4rem; } }
     .hero h1 {
       margin: 0 0 1.5rem; font-weight: 750; font-stretch: 90%;
@@ -273,11 +273,14 @@
     /* Answer key: four index cards */
     .key { padding: 3rem 0 4.5rem; border-top: 2px solid var(--ink); }
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
-    .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 2rem; max-width: 62ch; }
+    .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 1.25rem; max-width: 62ch; }
+    .key .bio { margin: 0 0 2.5rem; max-width: 60ch; font-size: 1.12rem; color: var(--ink); padding-left: 1.1rem; border-left: 3px solid var(--red); }
+    .key .bio a { color: var(--red); font-weight: 600; text-underline-offset: 3px; }
     .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-    @media (min-width: 760px) { .key .cards { grid-template-columns: 1fr 1fr; gap: 2.25rem 3rem; } }
-    .key .cards li { counter-increment: k; border-left: 3px solid var(--red); padding: 0.2rem 0 0.3rem 1.1rem; }
+    @media (min-width: 760px) { .key .cards { grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; } }
+    .key .cards li { counter-increment: k; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); padding: 0.9rem 0 0; }
     .key .cards h3 { margin: 0 0 0.5rem; font-size: 1.25rem; letter-spacing: 0; font-weight: 700; font-stretch: 100%; }
+    .key .cards { counter-reset: k 1; }
     .key .cards h3::before { content: counter(k, lower-alpha) ") "; font-family: var(--hand); font-size: 1.5rem; color: var(--red); }
     .key .cards p { margin: 0; color: var(--ink); }
     .key .cards a { color: var(--red); font-weight: 600; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
@@ -344,12 +347,6 @@
         <p class="stack-cap">rāSHio drawing a histogram and box plot, live in the browser.</p>
       </section>
 
-      <div class="score reveal" role="group" aria-label="Scorecard">
-        <div class="grade"><span class="num">20</span><span class="lbl">projects</span></div>
-        <div><span class="num">11</span><span class="lbl">live now</span></div>
-        <div><span class="num">9</span><span class="lbl">source only</span></div>
-        <div><span class="num">10+</span><span class="lbl">years teaching</span></div>
-      </div>
 
       <section id="problems" aria-labelledby="problems-title">
         <div class="ph"><div>
@@ -422,7 +419,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/officecraft-doc.webp"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft's home screen with WordCraft, GridCraft, DeckCraft, PdfCraft, viSHual, equaSHion and verSHion."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
+            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/officecraft-doc.webp"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft running its four apps: a WordCraft report, a GridCraft sheet, a DeckCraft slide and a PdfCraft PDF."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
             <div class="head"><span class="n">8.</span><h3><a href="https://officecraft.lefthanddev.com/">OfficeCraft</a></h3></div>
             <p><strong class="lead">Documents, spreadsheets, slides and PDFs as tabs in one window.</strong> Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
             <span class="given"><b>Given:</b> Rust, egui, wgpu</span>
@@ -486,9 +483,9 @@
         <div class="key-head">
           <h2 id="key-title"><span class="sig" aria-hidden="true">&Sigma;</span> Answer key</h2>
           <p class="big">One teacher, one left hand, and a habit of fixing the thing that slowed class down.</p>
+          <p class="bio">Steven Huff: math educator, CS teacher and curriculum developer, ten-plus years from elementary through college. The full CV lives at <a href="https://steven.lefthanddev.com/">steven.lefthanddev.com</a>.</p>
         </div>
         <ol class="cards">
-          <li><h3>Who writes this?</h3><p>Steven Huff: math educator, CS teacher and curriculum developer, ten-plus years from elementary through college. The full CV lives at <a href="https://steven.lefthanddev.com/">steven.lefthanddev.com</a>.</p></li>
           <li><h3>Why "Left Hand"?</h3><p>Lefties drag their hand through wet ink, so every line gets checked twice. The smudge is a feature.</p></li>
           <li><h3>Why the capital SH?</h3><p>They're the initials. rā<span class="sh">SH</span>io, book<span class="sh">SH</span>elf, ver<span class="sh">SH</span>ion: the tools sign their own names.</p></li>
           <li><h3>What's the rule?</h3><p>A student should open the page, get the answer, and get back to the homework. Student data stays on the student's machine wherever possible.</p></li>
