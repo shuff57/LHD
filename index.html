@@ -175,13 +175,13 @@
 
     /* Section titles */
     .sec-title { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin: 0 0 0.6rem; }
-    h2 { margin: 0; font-size: clamp(2.2rem, 4.6vw, 3.6rem); line-height: 1; letter-spacing: -0.035em; font-weight: 750; font-stretch: 80%; }
+    h2 { margin: 0; font-size: clamp(2.5rem, 4.6vw, 3.6rem); line-height: 1; letter-spacing: -0.035em; font-weight: 750; font-stretch: 80%; }
     .sec-sub { margin: 0 0 2rem; max-width: 56ch; color: var(--ink-soft); font-size: 1.125rem; }
 
     .ph { margin: 0 0 2.5rem; }
     .ph .sec-sub { margin-bottom: 1.25rem; }
     @media (min-width: 900px) { .ph { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; } .ph .sec-sub { margin-bottom: 0; } .ph .filters { justify-content: flex-end; flex-wrap: nowrap; } }
-    @media (max-width: 759px) { .ph .filters { flex-wrap: nowrap; overflow-x: auto; margin-inline: -1.25rem; padding: 0.2rem 1.25rem; scrollbar-width: none; } .ph .filters button { flex: none; } }
+    @media (max-width: 759px) { .ph .filters { display: grid; grid-template-columns: 1fr 1fr; } .ph .filters button { text-align: center; } }
     .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; font-family: var(--mono); font-size: 0.85rem; }
     .filters button {
       font: inherit; color: var(--ink); background: transparent; border: 1.5px solid var(--ink); border-radius: 999px;
@@ -201,17 +201,17 @@
     }
     @media (min-width: 760px) and (max-width: 1099px) { .s2 { grid-column: span 3; } .s4 { grid-column: span 6; } }
     .prob { position: relative; display: flex; flex-direction: column; gap: 0.6rem; }
-    .prob .head { order: -1; margin-bottom: 0.35rem; }
+    .prob .head { order: -1; margin-bottom: 0.9rem; }
     .feature h3 { font-size: clamp(2.4rem, 4.2vw, 3.6rem); }
     .feature p { font-size: 1.1rem; }
     @media (prefers-color-scheme: dark) { .print img { filter: brightness(0.8) saturate(0.92); } }
     @media (min-width: 760px) {
-      .feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; column-gap: 3rem; align-content: center; }
-      .feature .print { grid-column: 1; grid-row: 1 / span 5; align-self: center; margin: 0; }
+      .feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 3rem; row-gap: 0.6rem; }
+      .feature .print { grid-column: 1; grid-row: 1 / -1; align-self: center; margin: 0; }
       .feature > :not(.print) { grid-column: 2; }
-      .feature .head { align-self: end; }
+      .feature .head { grid-row: 2; } .feature > p { grid-row: 3; } .feature .given { grid-row: 4; } .feature .links { grid-row: 5; }
     }
-    @media (max-width: 759px) { .prob .print { margin-inline: 6px; } }
+    @media (max-width: 759px) { .prob .print { margin-inline: 6px; } .prob .print img { aspect-ratio: 4 / 3; object-position: var(--pos, center top); } }
     .prob[hidden] { display: none; }
     .prob .print { position: relative; rotate: var(--tilt, -1deg); margin-bottom: 0.5rem; padding-bottom: 0; }
     .prob .print.wide img { aspect-ratio: 1280 / 420; }
@@ -247,7 +247,8 @@
     .looseleaf { border-top: 2px solid var(--ink); margin: 0 0 2.25rem; padding: 0; list-style: none; }
     .ll-group[hidden] { display: none; }
     .ll-group:last-of-type .looseleaf { margin-bottom: 2.5rem; }
-    .grp { margin: 0 0 0.45rem; font-family: var(--hand); font-size: 1.4rem; font-weight: 700; color: var(--red); line-height: 1; }
+    .grp { margin: 0 0 0.55rem; font-family: var(--mono); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); line-height: 1; }
+    .grp::before { content: ""; display: inline-block; width: 0.7em; height: 0.7em; margin-right: 0.5em; background: var(--red); vertical-align: -0.05em; }
     .looseleaf li { display: grid; align-items: baseline; grid-template-columns: 1.6rem 1fr; gap: 0 0.5rem; padding: 1.15rem 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
     .looseleaf li[hidden] { display: none; }
     @media (min-width: 760px) { .looseleaf li { grid-template-columns: 3rem 14rem 1fr auto; column-gap: 2rem; align-items: baseline; } }
@@ -264,9 +265,9 @@
     .key { padding: 3rem 0 4.5rem; border-top: 2px solid var(--ink); }
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
     .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 2rem; max-width: 40ch; }
-    .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-    @media (min-width: 760px) { .key .cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } .key .cards li:first-child { grid-column: 1 / -1; } .key .cards li:first-child p { max-width: 70ch; font-size: 1.08rem; } }
-    .key .cards li { counter-increment: k; background: var(--card); border: 1px solid var(--frame-edge); border-top: 3px solid var(--red); padding: 1.2rem 1.4rem 1.3rem; box-shadow: var(--shadow); }
+    .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 760px) { .key .cards { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+    .key .cards li { counter-increment: k; background: var(--card); border: 1px solid var(--frame-edge); border-top: 3px solid var(--red); padding: 1.2rem 1.4rem 1.3rem; }
     .key .cards h3 { margin: 0 0 0.5rem; font-size: 1.3rem; letter-spacing: -0.01em; font-weight: 700; font-stretch: 90%; }
     .key .cards h3::before { content: counter(k, lower-alpha) ") "; font-family: var(--hand); font-size: 1.5rem; color: var(--red); }
     .key .cards p { margin: 0; color: color-mix(in srgb, var(--ink) 84%, var(--card)); }
@@ -366,7 +367,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="verSHion: Turn anything into an exam, beside a printed linear equations quiz."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
+            <figure class="print"><img style="--pos: left top" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="verSHion: Turn anything into an exam, beside a printed linear equations quiz."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
             <p>Question banks in, printed tests out. Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
@@ -374,7 +375,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img src="img/shcode.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
+            <figure class="print"><img style="--pos: left top" src="img/shcode.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
             <p>A whole classroom platform for high school JavaScript: lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
@@ -406,7 +407,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print"><img src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft's home screen with WordCraft, GridCraft, DeckCraft, PdfCraft, viSHual, equaSHion and verSHion."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
+            <figure class="print"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft's home screen with WordCraft, GridCraft, DeckCraft, PdfCraft, viSHual, equaSHion and verSHion."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
             <div class="head"><span class="n">8.</span><h3><a href="https://officecraft.lefthanddev.com/">OfficeCraft</a></h3></div>
             <p>Documents, spreadsheets, slides and PDFs as tabs in one window. Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
             <span class="given"><b>Given:</b> Rust, egui, wgpu</span>
