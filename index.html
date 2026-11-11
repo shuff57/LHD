@@ -146,12 +146,13 @@
     /* Spec cards: one real, readable detail per project, set as type on paper */
     .spec-body { container-type: inline-size; aspect-ratio: 16 / 10; background: #fbfaf3; color: #17201b; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 1.6rem 1.4rem 1rem; overflow: hidden;
       background-image: linear-gradient(rgba(70,120,90,.10) 1px, transparent 1px); background-size: 100% 1.6rem; }
+    @media (prefers-color-scheme: dark) { .spec-body { background-color: #dde2d6; } }
     .spec-body.sp-dark { background: #1d2521; color: #eef2ec; background-image: none; }
     .sp-k { font-family: var(--mono); font-size: max(0.72rem, 3.6cqi); color: #6a5a4a; text-transform: uppercase; letter-spacing: 0.06em; }
     .sp-dark .sp-k { color: #a9b6ad; }
     .sp-chip { font-style: normal; background: #2f6b4a; color: #fff; padding: 0 0.4em; border-radius: 3px; }
-    .sp-big { font-family: var(--sans); font-weight: 800; font-stretch: 80%; font-size: max(2.4rem, 17cqi); line-height: 0.95; letter-spacing: -0.03em; }
-    .sp-pct { color: #b8321c; }
+    .sp-big { font-family: var(--sans); font-weight: 800; font-stretch: 80%; font-size: max(2rem, 12cqi); line-height: 0.95; letter-spacing: -0.03em; }
+    .sp-pct { color: #17201b; }
     .sp-sub { font-size: max(0.95rem, 4.6cqi); color: #46524b; }
     .sp-q { font-family: var(--sans); font-weight: 650; font-size: max(1.15rem, 6.4cqi); line-height: 1.2; }
     .sp-list, .sp-lessons { margin: 0.2rem 0 0; padding: 0; list-style: none; font-size: max(0.9rem, 4.6cqi); line-height: 1.5; }
@@ -230,7 +231,7 @@
     .sh { color: var(--red); }
 
     /* Live problems: an uneven bento of taped prints */
-    .problems { display: grid; grid-template-columns: 1fr; gap: 3rem 2rem; grid-auto-flow: dense; margin-bottom: 6rem; }
+    .problems { display: grid; grid-template-columns: 1fr; gap: 2.5rem 2rem; grid-auto-flow: dense; margin-bottom: 6rem; }
     @media (min-width: 760px) {
       .problems { grid-template-columns: repeat(6, 1fr); }
       .s4 { grid-column: span 4; } .s3 { grid-column: span 3; } .s2 { grid-column: span 2; }
@@ -251,14 +252,14 @@
     @media (min-width: 760px) {
       .problems { grid-template-columns: 1fr; row-gap: 0; }
       .problems .feature { margin-bottom: 3.5rem; }
-      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 340px); grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 3.5rem; row-gap: 0.6rem; padding: 2rem 0 2.2rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
+      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 40rem) minmax(240px, 330px); justify-content: space-between; grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 2.5rem; row-gap: 0.6rem; padding: 2rem 0 2.2rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
       .prob.s3 .print { grid-column: 2; grid-row: 1 / -1; align-self: center; margin: 0; }
       .prob.s3 > :not(.print) { grid-column: 1; }
       .prob.s3 .head { grid-row: 2; } .prob.s3 > p { grid-row: 3; } .prob.s3 .given { grid-row: 4; } .prob.s3 .links { grid-row: 5; }
       .prob.s3 h3 { font-size: clamp(2rem, 3vw, 2.6rem); }
-      .prob.s3 p { max-width: 54ch; font-size: 1.08rem; }
+      .prob.s3 p { max-width: none; font-size: 1.08rem; }
     }
-    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 0.8rem; }  .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
+    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 1.7rem; } .spec-body { aspect-ratio: auto; min-height: 9rem; }  .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
     .prob[hidden] { display: none; }
     .prob .print { position: relative; rotate: var(--tilt, -1deg); margin-bottom: 0.5rem; padding-bottom: 0; }
     .prob .print.wide img { aspect-ratio: 1280 / 420; }
@@ -319,7 +320,7 @@
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
     .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 1.25rem; max-width: 38ch; }
     .key .bio { margin: 0 0 2.5rem; max-width: 60ch; font-size: 1.12rem; color: var(--ink); padding-left: 1.1rem; border-left: 3px solid var(--red); }
-    @media (max-width: 759px) { .key .bio { font-size: 1rem; padding-left: 0.85rem; margin-bottom: 1.75rem; } }
+    @media (max-width: 759px) { .key .big { font-size: 1.3rem; } .key .bio { font-size: 0.95rem; color: var(--ink-soft); padding-left: 0.85rem; margin-bottom: 1.75rem; } }
     .key .bio a { color: var(--red); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
     .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 760px) { .key .cards { grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; } }
@@ -432,7 +433,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">Chapter 1 &middot; JavaScript Fundamentals</span><ol class="sp-lessons"><li><b>1.1</b> Software Lifecycle</li><li><b>1.2</b> Variables and Data Types</li><li><b>1.3</b> Documentation and Coding Conventions</li><li><b>1.4</b> Programming Paradigms and Languages</li></ol></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">Chapter 1 &middot; JavaScript Fundamentals</span><ol class="sp-lessons"><li><b>1.1</b> Software Lifecycle</li><li><b>1.2</b> Variables and Data Types</li><li><b>1.3</b> Documentation and Coding Conventions</li></ol></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
             <p><strong class="lead">A whole classroom platform for high school JavaScript:</strong> lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
