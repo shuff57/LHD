@@ -126,7 +126,7 @@
     .sheet-head nav { align-items: baseline; }
     .theme-toggle { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 1.5px solid var(--ink); border-radius: 999px; padding: 0.2rem 0.65rem 0.2rem 0.45rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
     .theme-toggle:hover { color: var(--red); border-color: var(--red); }
-    @media (max-width: 720px) { .theme-toggle { padding: 0.3rem; } .tt-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } }
+    @media (max-width: 720px) { .theme-toggle { padding: 0.15rem 0.5rem 0.15rem 0.35rem; gap: 0.3rem; } }
     .tt-ink { width: 0.8rem; height: 0.8rem; border-radius: 50%; border: 1.5px solid currentColor; background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
 
     /* Hero */
@@ -285,7 +285,7 @@
     @media (min-width: 760px) {
       .problems { grid-template-columns: 1fr; row-gap: 0; }
       .problems .feature { margin-bottom: 3.5rem; }
-      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 40rem) minmax(240px, 330px); justify-content: space-between; grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 2.5rem; row-gap: 0.6rem; padding: 2rem 0 2.2rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
+      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 38rem) minmax(240px, 330px); justify-content: start; grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 4rem; row-gap: 0.6rem; padding: 2rem 0 2.2rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
       .prob.s3 .print { grid-column: 2; grid-row: 1 / -1; align-self: center; margin: 0; }
       .prob.s3 > :not(.print) { grid-column: 1; }
       .prob.s3 .head { grid-row: 2; } .prob.s3 > p { grid-row: 3; } .prob.s3 .given { grid-row: 4; } .prob.s3 .links { grid-row: 5; }
@@ -330,7 +330,7 @@
     .looseleaf { border-top: 2px solid var(--ink); margin: 0 0 2.25rem; padding: 0; list-style: none; }
     .ll-group[hidden] { display: none; }
     .ll-group:last-of-type .looseleaf { margin-bottom: 2.5rem; }
-    .grp { margin: 0 0 0.55rem; font-family: var(--mono); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); line-height: 1; }
+    .grp { margin: 0 0 0.6rem; font-family: var(--sans); font-size: 1.25rem; font-weight: 750; font-stretch: 90%; letter-spacing: -0.01em; color: var(--ink); line-height: 1.1; }
     .grp::before { content: ""; display: inline-block; width: 0.7em; height: 0.7em; margin-right: 0.5em; background: var(--red); vertical-align: -0.05em; }
     .looseleaf li { display: grid; align-items: baseline; grid-template-columns: 1.6rem 1fr; gap: 0 0.5rem; padding: 1.15rem 0; border-bottom: 1px dashed color-mix(in srgb, var(--ink) 40%, transparent); }
     .looseleaf li[hidden] { display: none; }
@@ -351,7 +351,12 @@
     /* Answer key: four index cards */
     .key { padding: 3rem 0 4.5rem; border-top: 2px solid var(--ink); }
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
-    .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 1.25rem; max-width: 38ch; }
+    .key .who { margin: 1.5rem 0 2.75rem; padding-left: 1.25rem; border-left: 4px solid var(--red); max-width: 46rem; }
+    .key .who-name { margin: 0; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 750; font-stretch: 90%; letter-spacing: -0.02em; line-height: 1.05; }
+    .key .who-role { margin: 0.45rem 0 0; font-size: 1.12rem; color: var(--ink); max-width: 52ch; }
+    .key .who-line { margin: 0.6rem 0 1.1rem; font-family: var(--hand); font-size: 1.45rem; color: var(--red); line-height: 1.15; }
+    .key .who-cv { display: inline-flex; text-decoration: none; font-weight: 650; background: var(--ink); color: var(--paper); padding: 0.6rem 1.05rem; border-radius: 3px; box-shadow: 3px 3px 0 var(--red); }
+    .key .who-cv:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--red); }
     .key .bio { margin: 0 0 2.5rem; max-width: 60ch; font-size: 1.12rem; color: var(--ink); padding-left: 1.1rem; border-left: 3px solid var(--red); }
     @media (max-width: 759px) { .key .big { font-size: 1.3rem; } .key .bio { font-size: 1.05rem; color: var(--ink); padding-left: 0.85rem; margin-bottom: 1.75rem; } }
     .key .bio a { color: var(--red); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
@@ -359,7 +364,7 @@
     @media (min-width: 760px) { .key .cards { grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; } }
     .key .cards li { counter-increment: k; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); padding: 0.9rem 0 0; }
     .key .cards h3 { margin: 0 0 0.5rem; font-size: 1.25rem; letter-spacing: 0; font-weight: 700; font-stretch: 100%; }
-    .key .cards { counter-reset: k 1; }
+    .key .cards { counter-reset: k 0; }
     .key .cards h3::before { content: counter(k, lower-alpha) ") "; font-family: var(--hand); font-size: 1.5rem; color: var(--red); }
     .key .cards p { margin: 0; color: var(--ink); }
     .key .cards a { color: var(--red); font-weight: 600; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
@@ -578,9 +583,13 @@
 
       <section id="key" class="key" aria-labelledby="key-title">
         <div class="key-head">
-          <h2 id="key-title"><span class="sig" aria-hidden="true">&Sigma;</span> Answer key</h2>
-          <p class="big">One teacher, one left hand, and a habit of fixing the thing that slowed class down.</p>
-          <p class="bio">Steven Huff: math educator, CS teacher and curriculum developer, ten-plus years from elementary through college. The full CV lives at <a href="https://steven.lefthanddev.com/">steven.lefthanddev.com</a>.</p>
+          <div class="sec-title"><h2 id="key-title">About</h2><span class="note" style="font-size:1.6rem" aria-hidden="true">the answer key</span></div>
+          <div class="who">
+            <p class="who-name">Steven Huff</p>
+            <p class="who-role">Math educator, CS teacher and curriculum developer. Ten-plus years teaching, from elementary through college.</p>
+            <p class="who-line">One teacher, one left hand, and a habit of fixing the thing that slowed class down.</p>
+            <a class="go who-cv" href="https://steven.lefthanddev.com/">Read the full CV &rarr;</a>
+          </div>
         </div>
         <ol class="cards">
           <li><h3>Why "Left Hand"?</h3><p>Because I&#8217;m left-handed. Lefties drag their hand through wet ink, so every line gets checked twice. The smudge is a feature.</p></li>
