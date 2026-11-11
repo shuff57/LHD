@@ -143,6 +143,7 @@
       transition: transform .5s cubic-bezier(.16,1,.3,1);
     }
     .print picture { display: block; }
+    @media (prefers-color-scheme: dark) { .prob .print img { filter: brightness(0.9); } }
     .print img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
     .stack .print figcaption { position: absolute; top: -12px; left: 50%; translate: -50% 0; rotate: -3deg; font-family: var(--hand); font-size: 1.2rem; font-weight: 700; color: #3a3424; line-height: 28px; white-space: nowrap; }
     .print::before {
@@ -284,10 +285,10 @@
     /* Answer key: four index cards */
     .key { padding: 3rem 0 4.5rem; border-top: 2px solid var(--ink); }
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
-    .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 1.25rem; max-width: 62ch; }
+    .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 1.25rem; max-width: 38ch; }
     .key .bio { margin: 0 0 2.5rem; max-width: 60ch; font-size: 1.12rem; color: var(--ink); padding-left: 1.1rem; border-left: 3px solid var(--red); }
     @media (max-width: 759px) { .key .bio { font-size: 1rem; padding-left: 0.85rem; margin-bottom: 1.75rem; } }
-    .key .bio a { color: var(--red); font-weight: 600; text-underline-offset: 3px; }
+    .key .bio a { color: var(--red); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
     .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 760px) { .key .cards { grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; } }
     .key .cards li { counter-increment: k; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); padding: 0.9rem 0 0; }
@@ -391,7 +392,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/vershion-phone.webp"><img style="--ar: 1 / 1" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="A printed linear equations quiz laid out by verSHion, with multiple choice, a graph question and a show-your-work line."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
+            <figure class="print"><picture><img style="--ar: 16 / 10" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="A printed linear equations quiz laid out by verSHion, with multiple choice, a graph question and a show-your-work line."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">Question banks in, printed tests out.</strong> Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
