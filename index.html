@@ -160,8 +160,10 @@
     .sp-lessons li { font-family: var(--mono); background: #2a3430; margin-top: 0.35rem; padding: 0.3em 0.6em; border-radius: 3px; font-size: max(0.8rem, 3.9cqi); }
     .sp-lessons b { color: #9fe3a0; margin-right: 0.8em; }
     .sp-choices, .sp-chips, .sp-tabs, .sp-gauges { display: flex; flex-wrap: wrap; gap: 0.45rem 0.6rem; }
-    .sp-choices span { font-size: max(1rem, 5cqi); border: 1.5px solid #17201b; border-radius: 999px; padding: 0.1em 0.7em; }
-    .sp-chips span { font-family: var(--mono); font-size: max(0.85rem, 4.2cqi); border: 1.5px solid currentColor; border-radius: 4px; padding: 0.15em 0.55em; }
+    .sp-choices span { font-size: max(1rem, 5cqi); color: #37423c; }
+    .sp-choices span + span::before { content: "\00b7"; margin-right: 0.6rem; color: #9aa59d; }
+    .sp-chips span { font-family: var(--mono); font-size: max(0.85rem, 4.2cqi); opacity: 0.85; }
+    .sp-chips span + span::before { content: "\00b7"; margin-right: 0.6rem; opacity: 0.6; }
     .sp-code { font-family: var(--mono); font-weight: 700; font-size: max(1.4rem, 8cqi); color: #f3d34a; }
     .sp-initial { display: flex; align-items: center; gap: 0.6rem; font-family: var(--mono); font-size: max(0.85rem, 4cqi); color: #46524b; }
     .sp-box { font-family: var(--hand); font-weight: 700; font-size: max(1.5rem, 8cqi); color: #b8321c; border: 2px solid #17201b; padding: 0 0.4em; line-height: 1.2; }
@@ -169,7 +171,8 @@
     .sp-math .frac { display: inline-flex; flex-direction: column; text-align: center; }
     .sp-math .frac > span:first-child { border-bottom: 2px solid currentColor; padding: 0 0.2em 0.1em; }
     .sp-math .ov { border-top: 2px solid currentColor; padding-top: 0.05em; }
-    .sp-tabs span { display: flex; flex-direction: column; font-family: var(--mono); font-size: max(0.8rem, 3.8cqi); color: #46524b; border: 1.5px solid #17201b; border-top: 4px solid #b8321c; border-radius: 4px 4px 0 0; padding: 0.35em 0.7em; background: #fff; }
+    .sp-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.2rem; }
+    .sp-tabs span { display: flex; align-items: baseline; gap: 0.5em; font-family: var(--mono); font-size: max(0.8rem, 3.8cqi); color: #6a5a4a; border-bottom: 1px dashed #9aa59d; padding-bottom: 0.25em; }
     .sp-tabs b { font-family: var(--sans); font-size: max(1rem, 5cqi); color: #17201b; }
     .sp-gauges span { display: flex; flex-direction: column; font-family: var(--mono); font-size: max(0.85rem, 4cqi); color: #c9d3cc; }
     .sp-gauges b { font-family: var(--sans); font-weight: 300; font-stretch: 75%; font-size: max(2rem, 13cqi); line-height: 1; color: #f0a35e; }
@@ -320,7 +323,7 @@
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
     .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 1.25rem; max-width: 38ch; }
     .key .bio { margin: 0 0 2.5rem; max-width: 60ch; font-size: 1.12rem; color: var(--ink); padding-left: 1.1rem; border-left: 3px solid var(--red); }
-    @media (max-width: 759px) { .key .big { font-size: 1.3rem; } .key .bio { font-size: 0.95rem; color: var(--ink-soft); padding-left: 0.85rem; margin-bottom: 1.75rem; } }
+    @media (max-width: 759px) { .key .big { font-size: 1.3rem; } .key .bio { font-size: 1.05rem; color: var(--ink); padding-left: 0.85rem; margin-bottom: 1.75rem; } }
     .key .bio a { color: var(--red); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
     .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 760px) { .key .cards { grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; } }
