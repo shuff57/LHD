@@ -157,7 +157,7 @@
     .stack:hover .p2 { transform: translate(12px, -4px); }
     .stack:hover .p3 { transform: translate(-4px, 10px); }
     .stack .note { position: absolute; right: 1%; top: 3%; font-size: 1.6rem; rotate: 5deg; z-index: 4; max-width: 9ch; text-align: right; }
-    @media (max-width: 899px) { .hero { gap: 1.75rem; padding-bottom: 2rem; } .stack { justify-self: center; aspect-ratio: 1.02; max-width: 360px; } .stack .note, .stack .p3 { display: none; } .stack .p1 { width: 74%; top: 5%; left: 2%; } .stack .p2 { width: 70%; top: 51%; right: 2%; } }
+    @media (max-width: 899px) { .hero { gap: 1.75rem; padding-bottom: 2rem; } .stack { justify-self: center; aspect-ratio: 1.02; max-width: 360px; } .stack { aspect-ratio: 1.45; } .stack .note, .stack .p2, .stack .p3 { display: none; } .stack .p1 { width: 92%; top: 7%; left: 4%; rotate: -2deg; } }
 
     /* Scorecard: the grade box in the corner of every test */
     .score {
@@ -172,7 +172,7 @@
     .score .grade { position: relative; }
     .score .grade .num { color: var(--red); }
     .score .grade .note { display: none; }
-    @media (max-width: 759px) { .score { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; padding: 0.75rem 1rem; margin-bottom: 2.5rem; } .score > div { padding: 0; border: 0; display: flex; align-items: baseline; gap: 0.35rem; } .score .num { display: inline; height: auto; font-size: 1.6rem; } .score .lbl { display: inline; margin: 0; font-size: 0.8rem; } }
+    @media (max-width: 759px) { .score { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1rem; padding: 0.75rem 1rem; margin-bottom: 2.5rem; } .score > div { padding: 0; border: 0; display: flex; align-items: baseline; gap: 0.35rem; } .score .num { display: inline; height: auto; font-size: 1.6rem; } .score .lbl { display: inline; margin: 0; font-size: 0.8rem; } }
 
     /* Section titles */
     .sec-title { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin: 0 0 0.6rem; }
@@ -280,8 +280,8 @@
     .key .cards a { color: var(--red); font-weight: 600; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
     .key .cards a:hover { color: var(--ink); }
     @media (max-width: 759px) {
-      .key .cards { gap: 0; }
-      .key .cards li { background: none; border: 0; border-left: 3px solid var(--red); border-bottom: 1px dashed color-mix(in srgb, var(--ink) 30%, transparent); padding: 0.85rem 0 0.95rem 0.9rem; }
+      .key .cards { gap: 1.4rem; }
+      .key .cards li { background: none; border: 0; border-left: 3px solid var(--red); padding: 0.1rem 0 0.15rem 0.9rem; }
       .key .cards h3 { font-size: 1.15rem; margin-bottom: 0.3rem; }
     }
     footer { border-top: 2px solid var(--ink); padding: 1.5rem 0 3rem; display: grid; grid-template-columns: 1fr; gap: 0.75rem; align-items: baseline; font-family: var(--mono); font-size: 0.9rem; color: var(--ink-soft); }
@@ -378,7 +378,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/vershion-phone.webp"><img style="--ar: 4 / 3" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="verSHion: Turn anything into an exam, beside a printed linear equations quiz."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
+            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/vershion-phone.webp"><img style="--ar: 1 / 1" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="A printed linear equations quiz laid out by verSHion, with multiple choice, a graph question and a show-your-work line."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">Question banks in, printed tests out.</strong> Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
@@ -455,25 +455,25 @@
         <div class="ll-group" data-cat="class">
           <h3 class="grp">The classroom</h3>
           <ol class="looseleaf">
-            <li><span class="n">12.</span><div class="nm"><h3><a href="https://github.com/shuff57/transformaSHion">transforma<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Tracing paper over a coordinate grid. Slide, turn and flip it. It never names the move, because that is the student's job.</p></li>
-            <li><span class="n">13.</span><div class="nm"><h3><a href="https://github.com/shuff57/tenshion">ten<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>A diagnostic that tells "can't start" from "won't start" from "doesn't know enough yet," and catches reading versus rushing.</p></li>
-            <li><span class="n">14.</span><div class="nm"><h3><a href="https://github.com/shuff57/O.G.R.E-OllamaGradingRubricEvaluator">O.G.R.E<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Grades 30 written responses in minutes on a fine-tuned local model. Student data never touches a cloud.</p></li>
-            <li><span class="n">15.</span><div class="nm"><h3><a href="https://github.com/shuff57/viSHion">vi<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Handwriting OCR for stacks of student pages, on a local llama.cpp vision server. One HTML file, no build.</p></li>
-            <li><span class="n">16.</span><div class="nm"><h3><a href="https://github.com/shuff57/syllabus-quickref">syllabus-quickref<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>The syllabus a student reads in ninety seconds and a parent searches in ten. Every fact traces back to the source.</p></li>
+            <li><span class="n">12.</span><div class="nm"><h3><a href="https://github.com/shuff57/transformaSHion">transforma<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Slide, turn and flip tracing paper over a grid. Naming the move is the student&#8217;s job.</p></li>
+            <li><span class="n">13.</span><div class="nm"><h3><a href="https://github.com/shuff57/tenshion">ten<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>A diagnostic that tells can&#8217;t-start from won&#8217;t-start, and reading from rushing.</p></li>
+            <li><span class="n">14.</span><div class="nm"><h3><a href="https://github.com/shuff57/O.G.R.E-OllamaGradingRubricEvaluator">O.G.R.E<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Grades 30 written responses in minutes on a local model. No cloud.</p></li>
+            <li><span class="n">15.</span><div class="nm"><h3><a href="https://github.com/shuff57/viSHion">vi<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Handwriting OCR for stacks of student pages, on a local vision server.</p></li>
+            <li><span class="n">16.</span><div class="nm"><h3><a href="https://github.com/shuff57/syllabus-quickref">syllabus-quickref<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Turns a syllabus into one page a student reads in ninety seconds.</p></li>
           </ol>
         </div>
         <div class="ll-group" data-cat="make">
           <h3 class="grp">Math &amp; making</h3>
           <ol class="looseleaf">
-            <li><span class="n">17.</span><div class="nm"><h3><a href="https://github.com/shuff57/reshape-cad">re<span class="sh">SH</span>ape CAD<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>CAD in plain words, on its own B-rep kernel in Rust. A shape it can't build yet is refused in a sentence and never faked.</p></li>
-            <li><span class="n">18.</span><div class="nm"><h3><a href="https://github.com/shuff57/reSHape">re<span class="sh">SH</span>ape<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Turns STL and 3MF meshes of machined parts back into STEP solids with true analytic geometry.</p></li>
+            <li><span class="n">17.</span><div class="nm"><h3><a href="https://github.com/shuff57/reshape-cad">re<span class="sh">SH</span>ape CAD<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Plain-words CAD on its own Rust B-rep kernel. It refuses what it can&#8217;t build.</p></li>
+            <li><span class="n">18.</span><div class="nm"><h3><a href="https://github.com/shuff57/reSHape">re<span class="sh">SH</span>ape<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Turns STL and 3MF meshes back into STEP solids with true geometry.</p></li>
           </ol>
         </div>
         <div class="ll-group" data-cat="lab">
           <h3 class="grp">Home lab</h3>
           <ol class="looseleaf">
-            <li><span class="n">19.</span><div class="nm"><h3><a href="https://github.com/shuff57/roku-lhd-launcher">LHD Launcher<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>A motion-forward home screen and photo screensaver for Roku TV. No root and no firmware flashing.</p></li>
-            <li><span class="n">20.</span><div class="nm"><h3><a href="https://github.com/shuff57/agent-evo">Agent-Evo<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>The agent framework behind the rest of this page. It reads how a session went and proposes small edits to itself.</p></li>
+            <li><span class="n">19.</span><div class="nm"><h3><a href="https://github.com/shuff57/roku-lhd-launcher">LHD Launcher<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>A motion-forward home screen and photo screensaver for Roku TV.</p></li>
+            <li><span class="n">20.</span><div class="nm"><h3><a href="https://github.com/shuff57/agent-evo">Agent-Evo<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>The agent framework behind this page. It edits itself after each session.</p></li>
           </ol>
         </div>
       </section>
