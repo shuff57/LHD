@@ -214,7 +214,18 @@
       .feature > :not(.print) { grid-column: 2; }
       .feature .head { grid-row: 2; } .feature > p { grid-row: 3; } .feature .given { grid-row: 4; } .feature .links { grid-row: 5; }
     }
-    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 0.8rem; } .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
+    /* Ledger rows: text leads, a smaller print sits taped in the right margin */
+    @media (min-width: 760px) {
+      .problems { grid-template-columns: 1fr; row-gap: 0; }
+      .problems .feature { margin-bottom: 3.5rem; }
+      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 380px); grid-template-rows: auto auto auto 1fr; column-gap: 3.5rem; row-gap: 0.6rem; padding: 2.4rem 0 2.6rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
+      .prob.s3 .print { grid-column: 2; grid-row: 1 / -1; align-self: center; margin: 0; }
+      .prob.s3 > :not(.print) { grid-column: 1; }
+      .prob.s3 .head { grid-row: 1; } .prob.s3 > p { grid-row: 2; } .prob.s3 .given { grid-row: 3; } .prob.s3 .links { grid-row: 4; align-self: start; }
+      .prob.s3 h3 { font-size: clamp(2rem, 3vw, 2.6rem); }
+      .prob.s3 p { max-width: 54ch; font-size: 1.08rem; }
+    }
+    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 0.8rem; } .prob.s3 .print { width: 82%; } .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
     .prob[hidden] { display: none; }
     .prob .print { position: relative; rotate: var(--tilt, -1deg); margin-bottom: 0.5rem; padding-bottom: 0; }
     .prob .print.wide img { aspect-ratio: 1280 / 420; }
