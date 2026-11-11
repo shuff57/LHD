@@ -142,6 +142,38 @@
       position: absolute; margin: 0; background: var(--frame); padding: 8px; box-shadow: 0 0 0 1px var(--frame-edge), var(--shadow);
       transition: transform .5s cubic-bezier(.16,1,.3,1);
     }
+
+    /* Spec cards: one real, readable detail per project, set as type on paper */
+    .spec-body { container-type: inline-size; aspect-ratio: 16 / 10; background: #fbfaf3; color: #17201b; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 1.6rem 1.4rem 1rem; overflow: hidden;
+      background-image: linear-gradient(rgba(70,120,90,.10) 1px, transparent 1px); background-size: 100% 1.6rem; }
+    .spec-body.sp-dark { background: #1d2521; color: #eef2ec; background-image: none; }
+    .sp-k { font-family: var(--mono); font-size: max(0.72rem, 3.6cqi); color: #6a5a4a; text-transform: uppercase; letter-spacing: 0.06em; }
+    .sp-dark .sp-k { color: #a9b6ad; }
+    .sp-chip { font-style: normal; background: #2f6b4a; color: #fff; padding: 0 0.4em; border-radius: 3px; }
+    .sp-big { font-family: var(--sans); font-weight: 800; font-stretch: 80%; font-size: max(2.4rem, 17cqi); line-height: 0.95; letter-spacing: -0.03em; }
+    .sp-pct { color: #b8321c; }
+    .sp-sub { font-size: max(0.95rem, 4.6cqi); color: #46524b; }
+    .sp-q { font-family: var(--sans); font-weight: 650; font-size: max(1.15rem, 6.4cqi); line-height: 1.2; }
+    .sp-list, .sp-lessons { margin: 0.2rem 0 0; padding: 0; list-style: none; font-size: max(0.9rem, 4.6cqi); line-height: 1.5; }
+    .sp-list li::before { content: "\2014  "; color: #b8321c; }
+    .sp-lessons li { font-family: var(--mono); background: #2a3430; margin-top: 0.35rem; padding: 0.3em 0.6em; border-radius: 3px; font-size: max(0.8rem, 3.9cqi); }
+    .sp-lessons b { color: #9fe3a0; margin-right: 0.8em; }
+    .sp-choices, .sp-chips, .sp-tabs, .sp-gauges { display: flex; flex-wrap: wrap; gap: 0.45rem 0.6rem; }
+    .sp-choices span { font-size: max(1rem, 5cqi); border: 1.5px solid #17201b; border-radius: 999px; padding: 0.1em 0.7em; }
+    .sp-chips span { font-family: var(--mono); font-size: max(0.85rem, 4.2cqi); border: 1.5px solid currentColor; border-radius: 4px; padding: 0.15em 0.55em; }
+    .sp-code { font-family: var(--mono); font-weight: 700; font-size: max(1.4rem, 8cqi); color: #f3d34a; }
+    .sp-initial { display: flex; align-items: center; gap: 0.6rem; font-family: var(--mono); font-size: max(0.85rem, 4cqi); color: #46524b; }
+    .sp-box { font-family: var(--hand); font-weight: 700; font-size: max(1.5rem, 8cqi); color: #b8321c; border: 2px solid #17201b; padding: 0 0.4em; line-height: 1.2; }
+    .sp-math { font-family: Georgia, "Times New Roman", serif; font-size: max(1.5rem, 8.5cqi); display: flex; align-items: center; gap: 0.3em; }
+    .sp-math .frac { display: inline-flex; flex-direction: column; text-align: center; }
+    .sp-math .frac > span:first-child { border-bottom: 2px solid currentColor; padding: 0 0.2em 0.1em; }
+    .sp-math .ov { border-top: 2px solid currentColor; padding-top: 0.05em; }
+    .sp-tabs span { display: flex; flex-direction: column; font-family: var(--mono); font-size: max(0.8rem, 3.8cqi); color: #46524b; border: 1.5px solid #17201b; border-top: 4px solid #b8321c; border-radius: 4px 4px 0 0; padding: 0.35em 0.7em; background: #fff; }
+    .sp-tabs b { font-family: var(--sans); font-size: max(1rem, 5cqi); color: #17201b; }
+    .sp-gauges span { display: flex; flex-direction: column; font-family: var(--mono); font-size: max(0.85rem, 4cqi); color: #c9d3cc; }
+    .sp-gauges b { font-family: var(--sans); font-weight: 300; font-stretch: 75%; font-size: max(2rem, 13cqi); line-height: 1; color: #f0a35e; }
+    .sp-gauges em { font-style: normal; font-size: 0.8em; color: #93a39a; }
+    .spec { background: var(--frame); }
     .print picture { display: block; }
     @media (prefers-color-scheme: dark) { .prob .print img { filter: brightness(0.9); } }
     .print img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
@@ -384,7 +416,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img src="img/bookshelf.webp" width="1280" height="800" loading="lazy" alt="bookSHelf's shelf of open textbooks: Integrated Math 1, Introduction to Statistics and Calculus Volume 1."><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body"><span class="sp-k">open textbooks, rewritten</span><span class="sp-big">180+</span><span class="sp-sub">sections to read</span><ul class="sp-list"><li>Integrated Math 1</li><li>Introduction to Statistics</li><li>Calculus Volume 1</li></ul></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">2.</span><h3><a href="https://oerbookshelf.app/">book<span class="sh">SH</span>elf</a></h3></div>
             <p><strong class="lead">Open textbooks, rewritten for the student who actually reads them:</strong> plain-English explanations, worked examples, collapsible solutions. An 11&#8209;step pipeline produces every page.</p>
             <span class="given"><b>Given:</b> 180+ sections, MathJax</span>
@@ -392,7 +424,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><picture><img style="--ar: 16 / 10" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="A printed linear equations quiz laid out by verSHion, with multiple choice, a graph question and a show-your-work line."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body"><span class="sp-k">Linear Equations Quiz &middot; <em class="sp-chip">Version A</em></span><span class="sp-q">1. Solve for <i>x</i>:&nbsp; 3<i>x</i> + 5 = 20</span><span class="sp-choices"><span>(A) 3</span><span>(B) 5</span><span>(C) 15</span><span>(D) 25</span></span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">Question banks in, printed tests out.</strong> Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
@@ -400,7 +432,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/shcode-phone.webp"><img style="--ar: 16 / 10" src="img/shcode-phone.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">Chapter 1 &middot; JavaScript Fundamentals</span><ol class="sp-lessons"><li><b>1.1</b> Software Lifecycle</li><li><b>1.2</b> Variables and Data Types</li><li><b>1.3</b> Documentation and Coding Conventions</li><li><b>1.4</b> Programming Paradigms and Languages</li></ol></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
             <p><strong class="lead">A whole classroom platform for high school JavaScript:</strong> lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
@@ -408,7 +440,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img src="img/inishial.webp" width="1280" height="800" loading="lazy" alt="iniSHial: a course syllabus on lined paper with student and parent sign-up."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">no backpack required.</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body"><span class="sp-k">Course syllabus &middot; section 4</span><span class="sp-q">Late work</span><span class="sp-sub">Parent or guardian, initial to show you read this section.</span><span class="sp-initial"><span class="sp-box">S.H.</span> initialed</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">no backpack required.</span></figcaption></figure>
             <div class="head"><span class="n">5.</span><h3><a href="https://inishial.pages.dev/">ini<span class="sh">SH</span>ial</a></h3></div>
             <p><strong class="lead">A living syllabus that parents initial section by section,</strong> so a signature means they read the late-work policy.</p>
             <span class="given"><b>Given:</b> vanilla JS, no build</span>
@@ -416,7 +448,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img src="img/moshion.webp" width="1280" height="800" loading="lazy" alt="moSHion: Sprites and real physics in a handful of globals, with a game sandbox."><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">the whole engine, as globals</span><span class="sp-code">setup()&nbsp; draw()</span><span class="sp-chips"><span>Sprite</span><span>Group</span><span>world</span><span>camera</span><span>kb</span><span>mouse</span></span></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">6.</span><h3><a href="https://shuff57.github.io/moshion/">mo<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">A 2D game engine for beginners:</strong> sprites and real Box2D physics in a handful of globals. Write setup() and draw(), and the engine runs them.</p>
             <span class="given"><b>Given:</b> planck.js, zero imports</span>
@@ -424,7 +456,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print"><img src="img/equashion.webp" width="1280" height="800" loading="lazy" alt="equaSHion's equation editor with the quadratic formula typed in."><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body"><span class="sp-k">type it, then copy it out</span><span class="sp-math"><i>x</i> = <span class="frac"><span>&minus;<i>b</i> &plusmn; &radic;<span class="ov"><i>b</i><sup>2</sup> &minus; 4<i>ac</i></span></span><span>2<i>a</i></span></span></span><span class="sp-chips"><span>LaTeX</span><span>MathML</span><span>OMML</span><span>SVG</span></span></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">7.</span><h3><a href="https://equashion.lefthanddev.com/">equa<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">An equation editor in pure Rust.</strong> Type it naturally, then copy it out as LaTeX, MathML, Word's OMML or SVG.</p>
             <span class="given"><b>Given:</b> Rust, wasm, WebGL2</span>
@@ -432,7 +464,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/officecraft-doc.webp"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft running its four apps: a WordCraft report, a GridCraft sheet, a DeckCraft slide and a PdfCraft PDF."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body"><span class="sp-k">one window, four apps</span><span class="sp-tabs"><span><b>WordCraft</b>.docx</span><span><b>GridCraft</b>.xlsx</span><span><b>DeckCraft</b>.pptx</span><span><b>PdfCraft</b>.pdf</span></span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
             <div class="head"><span class="n">8.</span><h3><a href="https://officecraft.lefthanddev.com/">OfficeCraft</a></h3></div>
             <p><strong class="lead">Documents, spreadsheets, slides and PDFs as tabs in one window.</strong> Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
             <span class="given"><b>Given:</b> Rust, egui, wgpu</span>
@@ -440,7 +472,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="lab">
-            <figure class="print"><img src="img/leaf.webp" width="1280" height="800" loading="lazy" alt="L.E.A.F: Point a photo at a plant. Start with a better lead."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">point. shoot. botany.</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body"><span class="sp-k">field result &middot; top match</span><span class="sp-q"><i>Eschscholzia californica</i></span><span class="sp-sub">Californian poppy</span><span class="sp-big sp-pct">99.98%</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">point. shoot. botany.</span></figcaption></figure>
             <div class="head"><span class="n">9.</span><h3><a href="https://leaf.lefthanddev.com/">L.E.A.F</a></h3></div>
             <p><strong class="lead">Plant ID that runs on your own server or right in the browser.</strong> Seven real models get compared head to head, and the README says plainly that 16 photos are a smoke test.</p>
             <span class="given"><b>Given:</b> FastAPI, BioCLIP, Docker</span>
@@ -448,7 +480,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print"><img src="img/slag.webp" width="1280" height="800" loading="lazy" alt="SLAG: machine and process setup beside wire speed and voltage gauges."><figcaption class="strip"><span class="stamp draft">Draft</span><span class="note" aria-hidden="true">the knob says 1&ndash;10.</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">Lincoln POWER MIG 210 MP &middot; MIG, mild steel</span><span class="sp-gauges"><span><b>33</b> of 100<em>wire speed</em></span><span><b>21.5</b> V<em>voltage</em></span><span><b>125</b> A<em>at the arc</em></span></span></div><figcaption class="strip"><span class="stamp draft">Draft</span><span class="note" aria-hidden="true">the knob says 1&ndash;10.</span></figcaption></figure>
             <div class="head"><span class="n">10.</span><h3><a href="https://slagweld.pages.dev/">SLAG</a></h3></div>
             <p><strong class="lead">Weld settings for the machine in front of you.</strong> Pick the process, metal and thickness, and it turns the chart's targets into the number you actually dial in.</p>
             <span class="given"><b>Given:</b> React, Vite, D1</span>
@@ -456,7 +488,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print"><img src="img/11gauge.webp" width="1280" height="800" loading="lazy" alt="11Gauge: Ready to analyze. Upload a photo or video of a weld."><figcaption class="strip"><span class="stamp draft">Draft</span></figcaption></figure>
+            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">ready to analyze</span><span class="sp-q">Upload a photo or a short clip of the weld.</span><span class="sp-chips"><span>MIG</span><span>TIG</span><span>Stick</span><span>Flux Core</span></span></div><figcaption class="strip"><span class="stamp draft">Draft</span></figcaption></figure>
             <div class="head"><span class="n">11.</span><h3><a href="https://11gauge.pages.dev/">11Gauge</a></h3></div>
             <p><strong class="lead">Grades welds, not people.</strong> Upload a photo or a short clip, describe the joint and position, and get a written report back from a vision model.</p>
             <span class="given"><b>Given:</b> Qwen3-VL, Ollama</span>
