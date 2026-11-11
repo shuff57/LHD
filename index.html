@@ -32,8 +32,8 @@
     /* Blue-ruled graph paper by day, chalkboard by night. One accent: the red pencil. */
     :root {
       --paper: #f4f4f1;
-      --grid: rgba(74, 134, 204, 0.14);
-      --grid-major: rgba(74, 134, 204, 0.26);
+      --grid: rgba(74, 134, 204, 0.10);
+      --grid-major: rgba(74, 134, 204, 0.18);
       --ink: #1c1f24;
       --ink-soft: #414852;
       --red: #b8321c;
@@ -51,8 +51,8 @@
     }
     :root[data-theme="dark"] {
         --paper: #1b1e23;
-      --grid: rgba(120, 170, 230, 0.07);
-      --grid-major: rgba(120, 170, 230, 0.14);
+      --grid: rgba(120, 170, 230, 0.05);
+      --grid-major: rgba(120, 170, 230, 0.10);
       --ink: #e8eaee;
       --ink-soft: #c3c8d0;
       --red: #ff8466;
@@ -165,7 +165,7 @@
     /* Spec cards: one real, readable detail per project, set as type on paper */
     .spec-body { container-type: inline-size; aspect-ratio: 16 / 10; background: #fbfaf3; color: #17201b; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 1.6rem 1.4rem 1rem; overflow: hidden;
       background-image: linear-gradient(rgba(74,134,204,.16) 1px, transparent 1px); background-size: 100% 1.6rem; }
-    :root[data-theme="dark"] .spec-body { background-color: #dde0e4; }
+    :root[data-theme="dark"] .spec-body:not(.sp-dark) { background-color: #dde0e4; }
     .spec-body.sp-dark { background: #22262c; color: #eef2ec; background-image: none; }
     .sp-k { font-family: var(--mono); font-size: max(0.72rem, 3.6cqi); color: #6a5a4a; text-transform: uppercase; letter-spacing: 0.06em; }
     .sp-dark .sp-k { color: #a9b6ad; }
@@ -310,9 +310,9 @@
     .prob p { margin: 0; color: var(--ink-soft); max-width: 50ch; }
     .prob .lead { color: var(--ink); font-weight: 650; }
     .prob p { font-size: 1.06rem; }
-    .prob .given { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-soft); }
+    .prob .given { font-family: var(--mono); font-size: 0.9rem; color: var(--ink-soft); }
     .prob .given b { color: var(--ink); font-weight: 600; }
-    .prob .links { display: flex; align-items: center; gap: 1.25rem; font-family: var(--mono); font-size: 0.85rem; margin-top: 0.35rem; }
+    .prob .links { display: flex; align-items: center; gap: 1.25rem; font-family: var(--mono); font-size: 0.95rem; margin-top: 0.35rem; }
     .prob .links .go { text-decoration: none; font-family: var(--sans); font-weight: 650; font-size: 0.95rem; background: var(--ink); color: var(--paper); padding: 0.55rem 1rem; border-radius: 3px; box-shadow: 3px 3px 0 var(--red); transition: transform .15s, box-shadow .15s; }
     .prob .links .go:hover { color: var(--paper); transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--red); }
     .prob .links a { text-underline-offset: 4px; }
@@ -374,6 +374,7 @@
     @media (min-width: 760px) { footer { grid-template-columns: 1fr auto 1fr; } footer > :last-child { justify-self: end; } }
     footer a { color: var(--ink); font-weight: 600; text-decoration-color: var(--red); }
     footer .note { font-size: 1.5rem; }
+    footer .flinks { display: flex; gap: 1.5rem; }
     footer a { text-underline-offset: 4px; }
 
     /* Pencil trail */
@@ -592,7 +593,7 @@
     <footer>
       <span>LeftHandDev &middot; <span id="year">2026</span></span>
       <span class="note" aria-hidden="true">show your work.</span>
-      <span><a href="https://steven.lefthanddev.com/">steven.lefthanddev.com</a> &middot; <a href="https://github.com/shuff57">github.com/shuff57</a></span>
+      <span class="flinks"><a href="https://steven.lefthanddev.com/">Steven&#8217;s CV</a><a href="https://github.com/shuff57">GitHub</a></span>
     </footer>
   </div>
 
