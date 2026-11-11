@@ -36,7 +36,7 @@
       --grid-major: rgba(74, 134, 204, 0.10);
       --ink: #1c1f24;
       --ink-soft: #414852;
-      --red: #b8321c;
+      --red: #4e2a84;
       --tape: rgba(236, 226, 180, 0.78);
       --card: #fbfbf9;
       --frame: #fefefc;
@@ -55,7 +55,7 @@
       --grid-major: rgba(120, 170, 230, 0.07);
       --ink: #e8eaee;
       --ink-soft: #c3c8d0;
-      --red: #ff8466;
+      --red: #b48ef0;
       --tape: #c9bd8a;
       --card: #272b32;
       --frame: #d3d6db;
@@ -175,7 +175,7 @@
     .sp-sub { font-size: max(0.95rem, 4.6cqi); color: #46524b; }
     .sp-q { font-family: var(--sans); font-weight: 650; font-size: max(1.15rem, 6.4cqi); line-height: 1.2; }
     .sp-list, .sp-lessons { margin: 0.2rem 0 0; padding: 0; list-style: none; font-size: max(0.9rem, 4.6cqi); line-height: 1.5; }
-    .sp-list li::before { content: "\2014  "; color: #b8321c; }
+    .sp-list li::before { content: "\2014  "; color: #4e2a84; }
     .sp-lessons li { font-family: var(--mono); background: #30353d; margin-top: 0.35rem; padding: 0.3em 0.6em; border-radius: 3px; font-size: max(0.8rem, 3.9cqi); }
     .sp-lessons b { color: #9fe3a0; margin-right: 0.8em; }
     .sp-choices, .sp-chips, .sp-tabs, .sp-gauges { display: flex; flex-wrap: wrap; gap: 0.45rem 0.6rem; }
@@ -185,7 +185,7 @@
     .sp-chips span + span::before { content: "\00b7"; margin-right: 0.6rem; opacity: 0.6; }
     .sp-code { font-family: var(--mono); font-weight: 700; font-size: max(1.4rem, 8cqi); color: #f3d34a; }
     .sp-initial { display: flex; align-items: center; gap: 0.6rem; font-family: var(--mono); font-size: max(0.85rem, 4cqi); color: #46524b; }
-    .sp-box { font-family: var(--hand); font-weight: 700; font-size: max(1.5rem, 8cqi); color: #b8321c; border: 2px solid #17201b; padding: 0 0.4em; line-height: 1.2; }
+    .sp-box { font-family: var(--hand); font-weight: 700; font-size: max(1.5rem, 8cqi); color: #4e2a84; border: 2px solid #17201b; padding: 0 0.4em; line-height: 1.2; }
     .sp-math { font-family: Georgia, "Times New Roman", serif; font-size: max(1.5rem, 8.5cqi); display: flex; align-items: center; gap: 0.3em; }
     .sp-math .frac { display: inline-flex; flex-direction: column; text-align: center; }
     .sp-math .frac > span:first-child { border-bottom: 2px solid currentColor; padding: 0 0.2em 0.1em; }
@@ -194,15 +194,15 @@
     .sp-tabs span { display: flex; align-items: baseline; gap: 0.5em; font-family: var(--mono); font-size: max(0.8rem, 3.8cqi); color: #6a5a4a; border-bottom: 1px dashed #9aa59d; padding-bottom: 0.25em; }
     .sp-tabs b { font-family: var(--sans); font-size: max(1rem, 5cqi); color: #17201b; }
     .sp-gauges span { display: flex; flex-direction: column; font-family: var(--mono); font-size: max(0.85rem, 4cqi); color: #c9d3cc; }
-    .sp-gauges b { font-family: var(--sans); font-weight: 300; font-stretch: 75%; font-size: max(2rem, 13cqi); line-height: 1; color: #f0a35e; }
+    .sp-gauges b { font-family: var(--sans); font-weight: 300; font-stretch: 75%; font-size: max(2rem, 13cqi); line-height: 1; color: #c9a7ff; }
     .sp-gauges em { font-style: normal; font-size: 0.8em; color: #93a39a; }
     .sp-steps { margin: 0.1rem 0 0; padding: 0; list-style: none; counter-reset: st; font-size: max(1rem, 5cqi); line-height: 1.55; }
     .sp-steps li { counter-increment: st; }
-    .sp-steps li::before { content: counter(st) "  "; font-family: var(--mono); color: #b8321c; }
+    .sp-steps li::before { content: counter(st) "  "; font-family: var(--mono); color: #4e2a84; }
     .sp-steps b { font-weight: 700; }
     .sp-sort { margin: 0.1rem 0 0; padding: 0; list-style: none; font-family: var(--sans); font-weight: 650; font-size: max(1.05rem, 5.6cqi); line-height: 1.45; }
-    .sp-sort li::before { content: "\2014  "; color: #f0a35e; font-weight: 400; }
-    .sp-sort em { font-style: italic; color: #f0a35e; }
+    .sp-sort li::before { content: "\2014  "; color: #c9a7ff; font-weight: 400; }
+    .sp-sort em { font-style: italic; color: #c9a7ff; }
     .sp-flag { color: #c3cbc6; font-family: var(--mono); font-size: max(0.9rem, 4.2cqi); }
     .spec { background: var(--frame); }
     .card-link { position: absolute; inset: 0; z-index: 3; border-radius: 2px; }
@@ -300,7 +300,7 @@
     .prob[hidden] { display: none; }
     .prob .print { position: relative; rotate: var(--tilt, -1deg); margin-bottom: 0.5rem; padding-bottom: 0; }
     .prob .print.wide img { aspect-ratio: 1280 / 420; }
-    .strip { --red: #b8321c; --ink-soft: #46524b; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 46px; padding: 4px 4px 2px; }
+    .strip { --red: #4e2a84; --ink-soft: #46524b; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 46px; padding: 4px 4px 2px; }
     .strip .note { font-size: 1.3rem; text-align: right; line-height: 1; rotate: -2deg; }
     .prob:nth-child(3n+2) { --tilt: 1.3deg; }
     .prob:nth-child(3n) { --tilt: -0.4deg; }
@@ -309,7 +309,7 @@
     .prob .n { font-family: var(--mono); font-size: 0.9rem; color: var(--ink-soft); min-width: 2.4ch; }
     .prob h3 { margin: 0; font-size: clamp(1.9rem, 3vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.05; font-weight: 750; font-stretch: 94%; }
     .prob h3 a { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 6px; background-image: linear-gradient(transparent 58%, color-mix(in srgb, #f3d34a 70%, transparent) 58%, color-mix(in srgb, #f3d34a 70%, transparent) 92%, transparent 92%); background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .45s cubic-bezier(.6,.05,.3,1); }
-    :root[data-theme="dark"] .prob h3 a { background-image: linear-gradient(transparent 58%, rgba(255,132,102,.32) 58%, rgba(255,132,102,.32) 92%, transparent 92%); }
+    :root[data-theme="dark"] .prob h3 a { background-image: linear-gradient(transparent 58%, rgba(180,142,240,.32) 58%, rgba(180,142,240,.32) 92%, transparent 92%); }
     .prob:hover h3 a, .prob h3 a:focus-visible { background-size: 100% 100%; }
     .prob p { margin: 0; color: var(--ink-soft); max-width: 50ch; }
     .prob .lead { color: var(--ink); font-weight: 650; }
