@@ -218,14 +218,14 @@
     @media (min-width: 760px) {
       .problems { grid-template-columns: 1fr; row-gap: 0; }
       .problems .feature { margin-bottom: 3.5rem; }
-      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 380px); grid-template-rows: auto auto auto 1fr; column-gap: 3.5rem; row-gap: 0.6rem; padding: 2.4rem 0 2.6rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
+      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 340px); grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 3.5rem; row-gap: 0.6rem; padding: 2rem 0 2.2rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
       .prob.s3 .print { grid-column: 2; grid-row: 1 / -1; align-self: center; margin: 0; }
       .prob.s3 > :not(.print) { grid-column: 1; }
-      .prob.s3 .head { grid-row: 1; } .prob.s3 > p { grid-row: 2; } .prob.s3 .given { grid-row: 3; } .prob.s3 .links { grid-row: 4; align-self: start; }
+      .prob.s3 .head { grid-row: 2; } .prob.s3 > p { grid-row: 3; } .prob.s3 .given { grid-row: 4; } .prob.s3 .links { grid-row: 5; }
       .prob.s3 h3 { font-size: clamp(2rem, 3vw, 2.6rem); }
       .prob.s3 p { max-width: 54ch; font-size: 1.08rem; }
     }
-    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 0.8rem; } .prob.s3 .print { width: 72%; } .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
+    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 0.8rem; }  .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
     .prob[hidden] { display: none; }
     .prob .print { position: relative; rotate: var(--tilt, -1deg); margin-bottom: 0.5rem; padding-bottom: 0; }
     .prob .print.wide img { aspect-ratio: 1280 / 420; }
@@ -286,6 +286,7 @@
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
     .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 1.25rem; max-width: 62ch; }
     .key .bio { margin: 0 0 2.5rem; max-width: 60ch; font-size: 1.12rem; color: var(--ink); padding-left: 1.1rem; border-left: 3px solid var(--red); }
+    @media (max-width: 759px) { .key .bio { font-size: 1rem; padding-left: 0.85rem; margin-bottom: 1.75rem; } }
     .key .bio a { color: var(--red); font-weight: 600; text-underline-offset: 3px; }
     .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 760px) { .key .cards { grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; } }
@@ -430,7 +431,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/officecraft-doc.webp"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft with DeckCraft open on a Quarterly review slide, the other apps one tab away."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
+            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/officecraft-doc.webp"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft running its four apps: a WordCraft report, a GridCraft sheet, a DeckCraft slide and a PdfCraft PDF."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
             <div class="head"><span class="n">8.</span><h3><a href="https://officecraft.lefthanddev.com/">OfficeCraft</a></h3></div>
             <p><strong class="lead">Documents, spreadsheets, slides and PDFs as tabs in one window.</strong> Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
             <span class="given"><b>Given:</b> Rust, egui, wgpu</span>
