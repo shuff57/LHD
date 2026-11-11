@@ -197,7 +197,7 @@
     .sh { color: var(--red); }
 
     /* Live problems: an uneven bento of taped prints */
-    .problems { display: grid; grid-template-columns: 1fr; gap: 4rem 2rem; grid-auto-flow: dense; margin-bottom: 6rem; }
+    .problems { display: grid; grid-template-columns: 1fr; gap: 3rem 2rem; grid-auto-flow: dense; margin-bottom: 6rem; }
     @media (min-width: 760px) {
       .problems { grid-template-columns: repeat(6, 1fr); }
       .s4 { grid-column: span 4; } .s3 { grid-column: span 3; } .s2 { grid-column: span 2; }
@@ -225,7 +225,7 @@
       .prob.s3 h3 { font-size: clamp(2rem, 3vw, 2.6rem); }
       .prob.s3 p { max-width: 54ch; font-size: 1.08rem; }
     }
-    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 0.8rem; } .prob.s3 .print { width: 82%; } .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
+    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 0.8rem; } .prob.s3 .print { width: 72%; } .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
     .prob[hidden] { display: none; }
     .prob .print { position: relative; rotate: var(--tilt, -1deg); margin-bottom: 0.5rem; padding-bottom: 0; }
     .prob .print.wide img { aspect-ratio: 1280 / 420; }
@@ -297,8 +297,8 @@
     .key .cards a { color: var(--red); font-weight: 600; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
     .key .cards a:hover { color: var(--ink); }
     @media (max-width: 759px) {
-      .key .cards { gap: 1.4rem; }
-      .key .cards li { background: none; border: 0; border-left: 3px solid var(--red); padding: 0.1rem 0 0.15rem 0.9rem; }
+      .key .cards { gap: 0; }
+      .key .cards li { background: none; border: 0; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); padding: 1rem 0 1.1rem; }
       .key .cards h3 { font-size: 1.15rem; margin-bottom: 0.3rem; }
     }
     footer { border-top: 2px solid var(--ink); padding: 1.5rem 0 3rem; display: grid; grid-template-columns: 1fr; gap: 0.75rem; align-items: baseline; font-family: var(--mono); font-size: 0.9rem; color: var(--ink-soft); }
@@ -334,8 +334,8 @@
       <span class="field optional">Period: <b>&infin;</b></span>
       <span class="field optional">Date: <b id="today">Today</b></span>
       <nav aria-label="Primary">
-        <a href="#problems">Problems</a>
-        <a href="#key">Answer key</a>
+        <a href="#problems">Projects</a>
+        <a href="#key">About</a>
       </nav>
     </header>
 
@@ -345,7 +345,7 @@
           <h1 id="hero-title">Software written with the <span class="circled">other<svg viewBox="0 0 200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M150 12 C 196 18, 204 66, 120 80 C 50 90, 4 70, 8 42 C 12 14, 70 4, 130 8 C 160 10, 178 18, 186 30"/></svg></span> hand.</h1>
           <p class="lede">Classroom tools from a math teacher, built to bridge abstract mathematics and student intuition.</p>
           <div class="ctas">
-            <a class="btn" href="#problems">Start the problem set <span aria-hidden="true">&darr;</span></a>
+            <a class="btn" href="#problems">Browse the 20 projects <span aria-hidden="true">&darr;</span></a>
             <a class="textlink" href="#key">Who is writing this?</a>
           </div>
         </div>
@@ -398,7 +398,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/shcode-phone.webp"><img style="--ar: 16 / 10" src="img/shcode.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
+            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/shcode-phone.webp"><img style="--ar: 16 / 10" src="img/shcode-phone.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
             <p><strong class="lead">A whole classroom platform for high school JavaScript:</strong> lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
@@ -430,7 +430,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/officecraft-doc.webp"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft running its four apps: a WordCraft report, a GridCraft sheet, a DeckCraft slide and a PdfCraft PDF."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
+            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/officecraft-doc.webp"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft with DeckCraft open on a Quarterly review slide, the other apps one tab away."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
             <div class="head"><span class="n">8.</span><h3><a href="https://officecraft.lefthanddev.com/">OfficeCraft</a></h3></div>
             <p><strong class="lead">Documents, spreadsheets, slides and PDFs as tabs in one window.</strong> Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
             <span class="given"><b>Given:</b> Rust, egui, wgpu</span>
