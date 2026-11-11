@@ -293,7 +293,7 @@
       .prob.s3 h3 { font-size: clamp(2rem, 3vw, 2.6rem); }
       .prob.s3 p { max-width: none; font-size: 1.08rem; }
     }
-    @media (max-width: 759px) { .prob .print { margin-inline: 6px; order: 9; margin-top: 1.7rem; } .spec-body { aspect-ratio: auto; min-height: 9rem; }  .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
+    @media (max-width: 759px) { .prob.s3 { border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); padding-top: 2rem; } .prob .print { margin-inline: 6px; order: 9; margin-top: 1.7rem; } .spec-body { aspect-ratio: auto; min-height: 9rem; }  .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
     .prob[hidden] { display: none; }
     .prob .print { position: relative; rotate: var(--tilt, -1deg); margin-bottom: 0.5rem; padding-bottom: 0; }
     .prob .print.wide img { aspect-ratio: 1280 / 420; }
@@ -352,7 +352,7 @@
     /* Answer key: four index cards */
     .key { padding: 3rem 0 4.5rem; border-top: 2px solid var(--ink); }
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
-    @media (min-width: 900px) { .key { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); column-gap: 4rem; align-items: start; } .key .cards { grid-template-columns: 1fr !important; gap: 0 !important; margin-top: 4.6rem; } .key .cards li { padding: 1.25rem 0 1.5rem !important; } .key .who { margin-bottom: 0; margin-top: 0; } .key .key-head { display: contents; } .key .sec-title { grid-column: 1 / -1; margin-bottom: 1.75rem; } .key .cards { margin-top: 0 !important; } .key .cards li:first-child { padding-top: 0 !important; border-top: 0; } }
+    @media (min-width: 900px) { .key .who { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name cv" "role cv" "line cv"; column-gap: 3rem; align-items: center; max-width: none !important; margin: 1.5rem 0 2.75rem !important; padding: 1.4rem 1.6rem 1.4rem 1.5rem; background: var(--card); box-shadow: var(--shadow); } .key .who-name { grid-area: name; } .key .who-role { grid-area: role; } .key .who-line { grid-area: line; margin-bottom: 0; } .key .who-cv { grid-area: cv; } .key .cards { grid-template-columns: repeat(3, 1fr) !important; gap: 0 2.5rem !important; } .key .cards li { padding: 1rem 0 0 !important; } }
     .key .who { margin: 1.5rem 0 2.75rem; padding-left: 1.25rem; border-left: 4px solid var(--red); max-width: 46rem; }
     .key .who-name { margin: 0; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 750; font-stretch: 90%; letter-spacing: -0.02em; line-height: 1.05; }
     .key .who-role { margin: 0.45rem 0 0; font-size: 1.12rem; color: var(--ink); max-width: 52ch; }
