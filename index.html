@@ -21,7 +21,7 @@
     :root {
       --paper: #eef3e7;
       --grid: rgba(70, 120, 90, 0.09);
-      --grid-major: rgba(70, 120, 90, 0.18);
+      --grid-major: rgba(70, 120, 90, 0.12);
       --ink: #17201b;
       --ink-soft: #37423c;
       --red: #b8321c;
@@ -39,7 +39,7 @@
       :root {
         --paper: #141c18;
         --grid: rgba(190, 220, 200, 0.045);
-        --grid-major: rgba(190, 220, 200, 0.09);
+        --grid-major: rgba(190, 220, 200, 0.07);
         --ink: #e6ece4;
         --ink-soft: #b9c5bc;
         --red: #ff8466;
@@ -147,12 +147,12 @@
     }
     .stack .p1 { width: 74%; left: 0; top: 4%; rotate: -4deg; z-index: 1; }
     .stack .p2 { width: 66%; right: 0; top: 30%; rotate: 3deg; z-index: 2; }
-    .stack .p3 { width: 58%; left: 10%; bottom: 0; rotate: -1.5deg; z-index: 3; }
+    .stack .p3 { width: 54%; left: 0; bottom: 0; rotate: -1.5deg; z-index: 3; }
     .stack:hover .p1 { transform: translate(-10px, -8px); }
     .stack:hover .p2 { transform: translate(12px, -4px); }
     .stack:hover .p3 { transform: translate(-4px, 10px); }
     .stack .note { position: absolute; right: 1%; top: 3%; font-size: 1.6rem; rotate: 5deg; z-index: 4; max-width: 9ch; text-align: right; }
-    @media (max-width: 899px) { .stack { justify-self: center; aspect-ratio: 1.25; } .stack .note, .stack .p3 { display: none; } .stack .p1 { width: 78%; top: 6%; } .stack .p2 { width: 72%; top: 38%; } }
+    @media (max-width: 899px) { .stack { justify-self: center; aspect-ratio: 1.25; } .stack .note, .stack .p3 { display: none; } .stack .p1 { width: 76%; top: 6%; left: 3%; } .stack .p2 { width: 72%; top: 38%; } }
 
     /* Scorecard: the grade box in the corner of every test */
     .score {
@@ -205,7 +205,7 @@
     .prob .head { display: flex; align-items: baseline; gap: 0.75rem; }
     .prob .n { font-family: var(--mono); font-size: 0.9rem; color: var(--ink-soft); min-width: 2.4ch; }
     .prob h3 { margin: 0; font-size: clamp(1.9rem, 3vw, 2.6rem); letter-spacing: -0.03em; line-height: 1.05; font-weight: 750; font-stretch: 85%; }
-    .prob h3 a { text-decoration: none; background-image: linear-gradient(transparent 58%, color-mix(in srgb, #f3d34a 70%, transparent) 58%, color-mix(in srgb, #f3d34a 70%, transparent) 92%, transparent 92%); background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .45s cubic-bezier(.6,.05,.3,1); }
+    .prob h3 a { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 6px; background-image: linear-gradient(transparent 58%, color-mix(in srgb, #f3d34a 70%, transparent) 58%, color-mix(in srgb, #f3d34a 70%, transparent) 92%, transparent 92%); background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .45s cubic-bezier(.6,.05,.3,1); }
     @media (prefers-color-scheme: dark) { .prob h3 a { background-image: linear-gradient(transparent 58%, rgba(255,132,102,.32) 58%, rgba(255,132,102,.32) 92%, transparent 92%); } }
     .prob:hover h3 a, .prob h3 a:focus-visible { background-size: 100% 100%; }
     .prob p { margin: 0; color: var(--ink-soft); max-width: 58ch; }
@@ -227,9 +227,9 @@
 
     /* Loose-leaf: source-only work, set as an index */
     .looseleaf { border-top: 2px solid var(--ink); margin: 0 0 4rem; padding: 0; list-style: none; }
-    .looseleaf li { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0 0.5rem; padding: 1.15rem 0; border-bottom: 1px dashed var(--grid-major); }
+    .looseleaf li { display: grid; align-items: baseline; grid-template-columns: 1.6rem 1fr; gap: 0 0.5rem; padding: 1.15rem 0; border-bottom: 1px dashed var(--grid-major); }
     .looseleaf li[hidden] { display: none; }
-    @media (min-width: 760px) { .looseleaf li { grid-template-columns: 3rem 15rem 1fr auto; align-items: baseline; } }
+    @media (min-width: 760px) { .looseleaf li { grid-template-columns: 3rem 13rem 1fr auto; column-gap: 1.75rem; align-items: baseline; } }
     .looseleaf .n { font-family: var(--mono); color: var(--ink-soft); font-size: 0.9rem; }
     .looseleaf h3 { margin: 0; font-size: 1.4rem; letter-spacing: -0.02em; font-weight: 700; font-stretch: 85%; }
     .looseleaf p { margin: 0.2rem 0 0; color: var(--ink-soft); grid-column: 2; }
@@ -244,7 +244,7 @@
     @media (min-width: 900px) { .key { grid-template-columns: 0.9fr 1.1fr; gap: 4rem; } }
     .key .big { font-size: clamp(1.3rem, 2.2vw, 1.75rem); line-height: 1.3; letter-spacing: -0.01em; font-weight: 400; color: var(--ink-soft); margin: 1.25rem 0 0; max-width: 22ch; }
     .key ol { margin: 0; padding: 0; list-style: none; counter-reset: k; }
-    .key ol li { counter-increment: k; display: grid; grid-template-columns: 2.6rem 1fr; padding: 0.9rem 0; border-bottom: 1px dashed var(--grid-major); color: var(--ink-soft); }
+    .key ol li { counter-increment: k; display: grid; grid-template-columns: 2.6rem 1fr; padding: 1rem 0; border-bottom: 1px dashed color-mix(in srgb, var(--ink) 28%, transparent); color: var(--ink-soft); }
     .key ol li::before { content: counter(k, lower-alpha) ")"; font-family: var(--hand); font-size: 1.5rem; font-weight: 700; color: var(--red); line-height: 1.1; }
     .key ol li b { color: var(--ink); font-weight: 650; }
     .key ol a { color: var(--ink); font-weight: 650; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 4px; }
@@ -380,15 +380,15 @@
             <span class="links"><a class="go" href="https://equashion.lefthanddev.com/">Open it &rarr;</a><a href="https://github.com/shuff57/equaSHion">Source</a></span>
           </article>
 
-          <article class="prob s4 reveal" data-cat="make">
-            <figure class="print wide"><img src="img/officecraft-wide.webp" width="1280" height="420" loading="lazy" alt="OfficeCraft's home screen with WordCraft, GridCraft, DeckCraft, PdfCraft, viSHual, equaSHion and verSHion."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF. one window.</span></figcaption></figure>
+          <article class="prob s3 reveal" data-cat="make">
+            <figure class="print"><img src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft's home screen with WordCraft, GridCraft, DeckCraft, PdfCraft, viSHual, equaSHion and verSHion."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
             <div class="head"><span class="n">8.</span><h3><a href="https://officecraft.lefthanddev.com/">OfficeCraft</a></h3></div>
             <p>Documents, spreadsheets, slides and PDFs as tabs in one window. Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
             <span class="given"><b>Given:</b> Rust, egui, wgpu</span>
             <span class="links"><a class="go" href="https://officecraft.lefthanddev.com/">Open it &rarr;</a><a href="https://github.com/shuff57/officecraft">Source</a></span>
           </article>
 
-          <article class="prob s2 reveal" data-cat="lab">
+          <article class="prob s3 reveal" data-cat="lab">
             <figure class="print"><img src="img/leaf.webp" width="1280" height="800" loading="lazy" alt="L.E.A.F: Point a photo at a plant. Start with a better lead."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">point. shoot. botany.</span></figcaption></figure>
             <div class="head"><span class="n">9.</span><h3><a href="https://leaf.lefthanddev.com/">L.E.A.F</a></h3></div>
             <p>Plant ID that runs on your own server or right in the browser. Seven real models get compared head to head, and the README says plainly that 16 photos are a smoke test.</p>
@@ -430,9 +430,9 @@
 
       <section id="key" class="key" aria-labelledby="key-title">
         <div>
-          <span class="sigma" aria-hidden="true">&Sigma;</span>
-          <h2 id="key-title" style="margin-top:1.5rem">Answer key</h2>
+          <h2 id="key-title">Answer key</h2>
           <p class="big">One teacher, one left hand, and a habit of fixing the thing that slowed class down.</p>
+          <span class="sigma" aria-hidden="true" style="margin-top:2rem">&Sigma;</span>
         </div>
         <ol>
           <li><span><b>Who writes this?</b> Steven Huff: math educator, CS teacher and curriculum developer, ten-plus years from elementary through college. The full CV lives at <a href="https://steven.lefthanddev.com/">steven.lefthanddev.com</a>.</span></li>
