@@ -172,7 +172,7 @@
     .score .grade { position: relative; }
     .score .grade .num { color: var(--red); }
     .score .grade .note { display: none; }
-    @media (max-width: 759px) { .score { grid-template-columns: repeat(4, 1fr); margin-bottom: 2.5rem; } .score > div { padding: 0.7rem 0.55rem 0.6rem; border-bottom: 0; } .score > div:last-child { border-right: 0; } .score .num { height: 2.4rem; font-size: 2rem; } .score .lbl { font-size: 0.7rem; } }
+    @media (max-width: 759px) { .score { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; padding: 0.75rem 1rem; margin-bottom: 2.5rem; } .score > div { padding: 0; border: 0; display: flex; align-items: baseline; gap: 0.35rem; } .score .num { display: inline; height: auto; font-size: 1.6rem; } .score .lbl { display: inline; margin: 0; font-size: 0.8rem; } }
 
     /* Section titles */
     .sec-title { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin: 0 0 0.6rem; }
@@ -228,6 +228,7 @@
     @media (prefers-color-scheme: dark) { .prob h3 a { background-image: linear-gradient(transparent 58%, rgba(255,132,102,.32) 58%, rgba(255,132,102,.32) 92%, transparent 92%); } }
     .prob:hover h3 a, .prob h3 a:focus-visible { background-size: 100% 100%; }
     .prob p { margin: 0; color: var(--ink-soft); max-width: 50ch; }
+    .prob .lead { color: var(--ink); font-weight: 650; }
     .prob .given { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-soft); }
     .prob .given b { color: var(--ink); font-weight: 600; }
     .prob .links { display: flex; align-items: center; gap: 1.25rem; font-family: var(--mono); font-size: 0.85rem; margin-top: 0.35rem; }
@@ -271,8 +272,8 @@
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
     .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 2rem; max-width: 40ch; }
     .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-    @media (min-width: 760px) { .key .cards { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
-    .key .cards li { counter-increment: k; background: var(--card); border: 1px solid var(--frame-edge); border-top: 3px solid var(--red); padding: 1.2rem 1.4rem 1.3rem; }
+    @media (min-width: 760px) { .key .cards { grid-template-columns: 1fr 1fr; gap: 2.25rem 3rem; } }
+    .key .cards li { counter-increment: k; border-left: 3px solid var(--red); padding: 0.2rem 0 0.3rem 1.1rem; }
     .key .cards h3 { margin: 0 0 0.5rem; font-size: 1.25rem; letter-spacing: 0; font-weight: 700; font-stretch: 100%; }
     .key .cards h3::before { content: counter(k, lower-alpha) ") "; font-family: var(--hand); font-size: 1.5rem; color: var(--red); }
     .key .cards p { margin: 0; color: var(--ink); }
@@ -332,8 +333,8 @@
           </div>
         </div>
         <div class="stack">
-          <figure class="print p1"><img src="img/rashio.webp" width="1280" height="800" alt="rāSHio, an online statistics calculator, listing its tools." fetchpriority="high"><figcaption>rāSHio</figcaption></figure>
-          <figure class="print p2"><img src="img/vershion.webp" width="1280" height="800" alt="verSHion's landing page: Turn anything into an exam, beside a printed linear equations quiz."><figcaption>verSHion</figcaption></figure>
+          <figure class="print p1"><img src="img/rashio-app.webp" width="1280" height="800" alt="rāSHio drawing a histogram and box plot of sample ages." fetchpriority="high"><figcaption>rāSHio</figcaption></figure>
+          <figure class="print p2"><img src="img/vershion-phone.webp" width="1024" height="768" alt="A printed linear equations quiz made with verSHion."><figcaption>verSHion</figcaption></figure>
           <figure class="print p3"><img src="img/equashion-hero.webp" width="1280" height="800" alt="equaSHion, an equation editor, showing the quadratic formula."><figcaption>equaSHion</figcaption></figure>
           <p class="note" aria-hidden="true">ink smudges are a feature</p>
         </div>
@@ -363,7 +364,7 @@
           <article class="prob feature reveal" data-cat="class">
             <figure class="print"><img src="img/rashio-app.webp" width="1280" height="800" loading="lazy" alt="rāSHio's preview app: a histogram and box plot of sample ages with min, quartiles, median and max."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">say it: ray-she-oh</span></figcaption></figure>
             <div class="head"><span class="n">1.</span><h3><a href="https://rashio.app/">rā<span class="sh">SH</span>io</a></h3></div>
-            <p>A statistics calculator for the intro course, built to replace the StatCrunch and TI-84 shuffle. A spreadsheet up front, then t-tests, ANOVA, chi-square and probability shading, and every chart redraws as the data changes. The data never leaves the student's machine.</p>
+            <p><strong class="lead">A statistics calculator for the intro course, built to replace the StatCrunch and TI-84 shuffle.</strong> A spreadsheet up front, then t-tests, ANOVA, chi-square and probability shading, and every chart redraws as the data changes. The data never leaves the student's machine.</p>
             <span class="given"><b>Given:</b> browser, D3, Cloudflare D1</span>
             <span class="links"><a class="go" href="https://rashio.app/">Open it &rarr;</a></span>
           </article>
@@ -371,7 +372,7 @@
           <article class="prob s3 reveal" data-cat="class">
             <figure class="print"><img src="img/bookshelf.webp" width="1280" height="800" loading="lazy" alt="bookSHelf's shelf of open textbooks: Integrated Math 1, Introduction to Statistics and Calculus Volume 1."><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">2.</span><h3><a href="https://oerbookshelf.app/">book<span class="sh">SH</span>elf</a></h3></div>
-            <p>Open textbooks, rewritten for the student who actually reads them: plain-English explanations, worked examples, collapsible solutions. An 11&#8209;step pipeline produces every page.</p>
+            <p><strong class="lead">Open textbooks, rewritten for the student who actually reads them:</strong> plain-English explanations, worked examples, collapsible solutions. An 11&#8209;step pipeline produces every page.</p>
             <span class="given"><b>Given:</b> 180+ sections, MathJax</span>
             <span class="links"><a class="go" href="https://oerbookshelf.app/">Open it &rarr;</a></span>
           </article>
@@ -379,7 +380,7 @@
           <article class="prob s3 reveal" data-cat="class">
             <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/vershion-phone.webp"><img style="--ar: 4 / 3" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="verSHion: Turn anything into an exam, beside a printed linear equations quiz."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
-            <p>Question banks in, printed tests out. Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
+            <p><strong class="lead">Question banks in, printed tests out.</strong> Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
             <span class="links"><a class="go" href="https://vershion.lefthanddev.com/">Open it &rarr;</a><a href="https://github.com/shuff57/verSHion">Source</a></span>
           </article>
@@ -387,7 +388,7 @@
           <article class="prob s3 reveal" data-cat="class">
             <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/shcode-phone.webp"><img style="--ar: 16 / 10" src="img/shcode.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
-            <p>A whole classroom platform for high school JavaScript: lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
+            <p><strong class="lead">A whole classroom platform for high school JavaScript:</strong> lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
             <span class="links"><a class="go" href="https://shcode.pages.dev/">Open it &rarr;</a><a href="https://github.com/shuff57/shCode">Source</a></span>
           </article>
@@ -395,7 +396,7 @@
           <article class="prob s3 reveal" data-cat="class">
             <figure class="print"><img src="img/inishial.webp" width="1280" height="800" loading="lazy" alt="iniSHial: a course syllabus on lined paper with student and parent sign-up."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">no backpack required.</span></figcaption></figure>
             <div class="head"><span class="n">5.</span><h3><a href="https://inishial.pages.dev/">ini<span class="sh">SH</span>ial</a></h3></div>
-            <p>A living syllabus that parents initial section by section, so a signature means they read the late-work policy.</p>
+            <p><strong class="lead">A living syllabus that parents initial section by section,</strong> so a signature means they read the late-work policy.</p>
             <span class="given"><b>Given:</b> vanilla JS, no build</span>
             <span class="links"><a class="go" href="https://inishial.pages.dev/">Open it &rarr;</a><a href="https://github.com/shuff57/inishial">Source</a></span>
           </article>
@@ -403,7 +404,7 @@
           <article class="prob s3 reveal" data-cat="class">
             <figure class="print"><img src="img/moshion.webp" width="1280" height="800" loading="lazy" alt="moSHion: Sprites and real physics in a handful of globals, with a game sandbox."><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">6.</span><h3><a href="https://shuff57.github.io/moshion/">mo<span class="sh">SH</span>ion</a></h3></div>
-            <p>A 2D game engine for beginners: sprites and real Box2D physics in a handful of globals. Write setup() and draw(), and the engine runs them.</p>
+            <p><strong class="lead">A 2D game engine for beginners:</strong> sprites and real Box2D physics in a handful of globals. Write setup() and draw(), and the engine runs them.</p>
             <span class="given"><b>Given:</b> planck.js, zero imports</span>
             <span class="links"><a class="go" href="https://shuff57.github.io/moshion/">Open it &rarr;</a><a href="https://github.com/shuff57/moshion">Source</a></span>
           </article>
@@ -411,7 +412,7 @@
           <article class="prob s3 reveal" data-cat="make">
             <figure class="print"><img src="img/equashion.webp" width="1280" height="800" loading="lazy" alt="equaSHion's equation editor with the quadratic formula typed in."><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">7.</span><h3><a href="https://equashion.lefthanddev.com/">equa<span class="sh">SH</span>ion</a></h3></div>
-            <p>An equation editor in pure Rust. Type it naturally, then copy it out as LaTeX, MathML, Word's OMML or SVG.</p>
+            <p><strong class="lead">An equation editor in pure Rust.</strong> Type it naturally, then copy it out as LaTeX, MathML, Word's OMML or SVG.</p>
             <span class="given"><b>Given:</b> Rust, wasm, WebGL2</span>
             <span class="links"><a class="go" href="https://equashion.lefthanddev.com/">Open it &rarr;</a><a href="https://github.com/shuff57/equaSHion">Source</a></span>
           </article>
@@ -419,7 +420,7 @@
           <article class="prob s3 reveal" data-cat="make">
             <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/officecraft-doc.webp"><img style="--pos: 35% top" src="img/officecraft-wide.webp" width="1280" height="800" loading="lazy" alt="OfficeCraft's home screen with WordCraft, GridCraft, DeckCraft, PdfCraft, viSHual, equaSHion and verSHion."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
             <div class="head"><span class="n">8.</span><h3><a href="https://officecraft.lefthanddev.com/">OfficeCraft</a></h3></div>
-            <p>Documents, spreadsheets, slides and PDFs as tabs in one window. Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
+            <p><strong class="lead">Documents, spreadsheets, slides and PDFs as tabs in one window.</strong> Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
             <span class="given"><b>Given:</b> Rust, egui, wgpu</span>
             <span class="links"><a class="go" href="https://officecraft.lefthanddev.com/">Open it &rarr;</a><a href="https://github.com/shuff57/officecraft">Source</a></span>
           </article>
@@ -427,7 +428,7 @@
           <article class="prob s3 reveal" data-cat="lab">
             <figure class="print"><img src="img/leaf.webp" width="1280" height="800" loading="lazy" alt="L.E.A.F: Point a photo at a plant. Start with a better lead."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">point. shoot. botany.</span></figcaption></figure>
             <div class="head"><span class="n">9.</span><h3><a href="https://leaf.lefthanddev.com/">L.E.A.F</a></h3></div>
-            <p>Plant ID that runs on your own server or right in the browser. Seven real models get compared head to head, and the README says plainly that 16 photos are a smoke test.</p>
+            <p><strong class="lead">Plant ID that runs on your own server or right in the browser.</strong> Seven real models get compared head to head, and the README says plainly that 16 photos are a smoke test.</p>
             <span class="given"><b>Given:</b> FastAPI, BioCLIP, Docker</span>
             <span class="links"><a class="go" href="https://leaf.lefthanddev.com/">Open it &rarr;</a><a href="https://github.com/shuff57/LEAF">Source</a></span>
           </article>
@@ -435,7 +436,7 @@
           <article class="prob s3 reveal" data-cat="make">
             <figure class="print"><img src="img/slag.webp" width="1280" height="800" loading="lazy" alt="SLAG: machine and process setup beside wire speed and voltage gauges."><figcaption class="strip"><span class="stamp draft">Draft</span><span class="note" aria-hidden="true">the knob says 1&ndash;10.</span></figcaption></figure>
             <div class="head"><span class="n">10.</span><h3><a href="https://slagweld.pages.dev/">SLAG</a></h3></div>
-            <p>Weld settings for the machine in front of you. Pick the process, metal and thickness, and it turns the chart's targets into the number you actually dial in.</p>
+            <p><strong class="lead">Weld settings for the machine in front of you.</strong> Pick the process, metal and thickness, and it turns the chart's targets into the number you actually dial in.</p>
             <span class="given"><b>Given:</b> React, Vite, D1</span>
             <span class="links"><a class="go" href="https://slagweld.pages.dev/">Open it &rarr;</a><a href="https://github.com/shuff57/slag">Source</a></span>
           </article>
@@ -443,7 +444,7 @@
           <article class="prob s3 reveal" data-cat="make">
             <figure class="print"><img src="img/11gauge.webp" width="1280" height="800" loading="lazy" alt="11Gauge: Ready to analyze. Upload a photo or video of a weld."><figcaption class="strip"><span class="stamp draft">Draft</span></figcaption></figure>
             <div class="head"><span class="n">11.</span><h3><a href="https://11gauge.pages.dev/">11Gauge</a></h3></div>
-            <p>Grades welds, not people. Upload a photo or a short clip, describe the joint and position, and get a written report back from a vision model.</p>
+            <p><strong class="lead">Grades welds, not people.</strong> Upload a photo or a short clip, describe the joint and position, and get a written report back from a vision model.</p>
             <span class="given"><b>Given:</b> Qwen3-VL, Ollama</span>
             <span class="links"><a class="go" href="https://11gauge.pages.dev/">Open it &rarr;</a><a href="https://github.com/shuff57/11Gauge">Source</a></span>
           </article>
