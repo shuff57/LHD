@@ -280,6 +280,9 @@
       .feature .print { grid-column: 1; grid-row: 1 / -1; align-self: center; margin: 0; }
       .feature > :not(.print) { grid-column: 2; }
       .feature .head { grid-row: 2; } .feature > p { grid-row: 3; } .feature .given { grid-row: 4; } .feature .links { grid-row: 5; }
+      .feature.flip { grid-template-columns: 1fr 1.3fr; }
+      .feature.flip .print { grid-column: 2; }
+      .feature.flip > :not(.print) { grid-column: 1; }
     }
     /* Ledger rows: text leads, a smaller print sits taped in the right margin */
     @media (min-width: 760px) {
@@ -460,16 +463,16 @@
             <span class="links"><a class="go" href="https://rashio.app/">Open it &rarr;</a></span>
           </article>
 
-          <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><a class="card-link" href="https://oerbookshelf.app/" tabindex="-1" aria-hidden="true" title="Open bookSHelf"></a><div class="spec-body"><span class="sp-k">open textbooks, rewritten</span><span class="sp-big">180+</span><span class="sp-sub">sections to read</span><ul class="sp-list"><li>Integrated Math 1</li><li>Introduction to Statistics</li><li>Calculus Volume 1</li></ul></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
+          <article class="prob feature flip reveal" data-cat="class">
+            <figure class="print"><a class="card-link" href="https://oerbookshelf.app/" tabindex="-1" aria-hidden="true" title="Open bookSHelf"></a><img src="img/bookshelf.webp" width="1280" height="800" loading="lazy" alt="bookSHelf's shelf of open textbooks: Integrated Math 1, Introduction to Statistics and Calculus Volume 1."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">read it, then open it.</span></figcaption></figure>
             <div class="head"><span class="n">2.</span><h3><a href="https://oerbookshelf.app/">book<span class="sh">SH</span>elf</a></h3></div>
             <p><strong class="lead">Open textbooks, rewritten for the student who actually reads them:</strong> plain-English explanations, worked examples, collapsible solutions. An 11&#8209;step pipeline produces every page.</p>
             <span class="given"><b>Given:</b> 180+ sections, MathJax</span>
             <span class="links"><a class="go" href="https://oerbookshelf.app/">Open it &rarr;</a></span>
           </article>
 
-          <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><a class="card-link" href="https://vershion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open verSHion"></a><div class="spec-body"><span class="sp-k">Quiz &middot; <em class="sp-chip">Version A</em></span><span class="sp-q">1. Solve for <i>x</i>:&nbsp; 3<i>x</i> + 5 = 20</span><span class="sp-choices"><span>(A) 3</span><span>(B) 5</span><span>(C) 15</span><span>(D) 25</span></span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
+          <article class="prob feature reveal" data-cat="class">
+            <figure class="print"><a class="card-link" href="https://vershion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open verSHion"></a><img src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="A printed linear equations quiz laid out by verSHion, with multiple choice, a graph question and a show-your-work line."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">Question banks in, printed tests out.</strong> Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
