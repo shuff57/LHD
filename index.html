@@ -17,21 +17,21 @@
     @font-face { font-family: "JetBrains Mono"; src: url(fonts/jetbrains-latin.woff2) format("woff2"); font-weight: 400 700; font-display: swap; }
     @font-face { font-family: "Caveat"; src: url(fonts/caveat-latin.woff2) format("woff2"); font-weight: 400 700; font-display: swap; }
 
-    /* Engineering paper by day, chalkboard by night. One accent: the red pencil. */
+    /* Blue-ruled graph paper by day, chalkboard by night. One accent: the red pencil. */
     :root {
-      --paper: #eef3e7;
-      --grid: rgba(70, 120, 90, 0.09);
-      --grid-major: rgba(70, 120, 90, 0.12);
-      --ink: #17201b;
-      --ink-soft: #37423c;
+      --paper: #f4f4f1;
+      --grid: rgba(74, 134, 204, 0.14);
+      --grid-major: rgba(74, 134, 204, 0.26);
+      --ink: #1c1f24;
+      --ink-soft: #414852;
       --red: #b8321c;
       --tape: rgba(236, 226, 180, 0.78);
-      --card: #f8faf4;
-      --frame: #fbfcf8;
-      --frame-edge: rgba(20, 40, 30, 0.12);
-      --hole: #c9d2c3;
+      --card: #fbfbf9;
+      --frame: #fefefc;
+      --frame-edge: rgba(30, 40, 60, 0.12);
+      --hole: #cfd3d8;
       --coil: #7d858c;
-      --shadow: 0 1px 0 rgba(0,0,0,0.04), 0 14px 30px -18px rgba(20, 40, 30, 0.45);
+      --shadow: 0 1px 0 rgba(0,0,0,0.04), 0 14px 30px -18px rgba(30, 40, 60, 0.42);
       --binding: 0px;
       --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
       --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
@@ -144,7 +144,7 @@
 
     /* Spec cards: one real, readable detail per project, set as type on paper */
     .spec-body { container-type: inline-size; aspect-ratio: 16 / 10; background: #fbfaf3; color: #17201b; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 1.6rem 1.4rem 1rem; overflow: hidden;
-      background-image: linear-gradient(rgba(70,120,90,.10) 1px, transparent 1px); background-size: 100% 1.6rem; }
+      background-image: linear-gradient(rgba(74,134,204,.16) 1px, transparent 1px); background-size: 100% 1.6rem; }
     @media (prefers-color-scheme: dark) { .spec-body { background-color: #dde2d6; } }
     .spec-body.sp-dark { background: #1d2521; color: #eef2ec; background-image: none; }
     .sp-k { font-family: var(--mono); font-size: max(0.72rem, 3.6cqi); color: #6a5a4a; text-transform: uppercase; letter-spacing: 0.06em; }
@@ -341,6 +341,7 @@
     .key .cards p { margin: 0; color: var(--ink); }
     .key .cards a { color: var(--red); font-weight: 600; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
     .key .cards a:hover { color: var(--ink); }
+    .key .kicker { color: var(--red); font-weight: 750; }
     @media (max-width: 759px) {
       .key .cards { gap: 0; }
       .key .cards li { background: none; border: 0; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); padding: 1rem 0 1.1rem; }
@@ -556,7 +557,7 @@
           <p class="bio">Steven Huff: math educator, CS teacher and curriculum developer, ten-plus years from elementary through college. The full CV lives at <a href="https://steven.lefthanddev.com/">steven.lefthanddev.com</a>.</p>
         </div>
         <ol class="cards">
-          <li><h3>Why "Left Hand"?</h3><p>Lefties drag their hand through wet ink, so every line gets checked twice. The smudge is a feature.</p></li>
+          <li><h3>Why "Left Hand"?</h3><p>Because I&#8217;m left-handed. Lefties drag their hand through wet ink, so every line gets checked twice. The smudge is a feature. So is the name: <strong class="kicker">LeftHandDev</strong>.</p></li>
           <li><h3>Why the capital SH?</h3><p>They're the initials. rā<span class="sh">SH</span>io, book<span class="sh">SH</span>elf, ver<span class="sh">SH</span>ion: the tools sign their own names.</p></li>
           <li><h3>What's the rule?</h3><p>A student should open the page, get the answer, and get back to the homework. Student data stays on the student's machine wherever possible.</p></li>
         </ol>
