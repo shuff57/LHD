@@ -194,7 +194,7 @@
     .sh { color: var(--red); }
 
     /* Live problems: an uneven bento of taped prints */
-    .problems { display: grid; grid-template-columns: 1fr; gap: 2.75rem 2rem; grid-auto-flow: dense; margin-bottom: 6rem; }
+    .problems { display: grid; grid-template-columns: 1fr; gap: 4rem 2rem; grid-auto-flow: dense; margin-bottom: 6rem; }
     @media (min-width: 760px) {
       .problems { grid-template-columns: repeat(6, 1fr); }
       .s4 { grid-column: span 4; } .s3 { grid-column: span 3; } .s2 { grid-column: span 2; }
@@ -204,14 +204,14 @@
     .prob .head { order: -1; margin-bottom: 0.9rem; }
     .feature h3 { font-size: clamp(2.4rem, 4.2vw, 3.6rem); }
     .feature p { font-size: 1.1rem; }
-    @media (prefers-color-scheme: dark) { .print img { filter: brightness(0.8) saturate(0.92); } }
+
     @media (min-width: 760px) {
       .feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 3rem; row-gap: 0.6rem; }
       .feature .print { grid-column: 1; grid-row: 1 / -1; align-self: center; margin: 0; }
       .feature > :not(.print) { grid-column: 2; }
       .feature .head { grid-row: 2; } .feature > p { grid-row: 3; } .feature .given { grid-row: 4; } .feature .links { grid-row: 5; }
     }
-    @media (max-width: 759px) { .prob .print { margin-inline: 6px; } .prob .print img { aspect-ratio: 4 / 3; object-position: var(--pos, center top); } }
+    @media (max-width: 759px) { .prob .print { margin-inline: 6px; } .prob .print img { aspect-ratio: var(--ar, 16 / 10); object-position: var(--pos, center top); } }
     .prob[hidden] { display: none; }
     .prob .print { position: relative; rotate: var(--tilt, -1deg); margin-bottom: 0.5rem; padding-bottom: 0; }
     .prob .print.wide img { aspect-ratio: 1280 / 420; }
@@ -222,7 +222,7 @@
     .prob:hover .print { transform: rotate(calc(var(--tilt) * -1)) translateY(-4px); }
     .prob .head { display: flex; align-items: baseline; gap: 0.75rem; }
     .prob .n { font-family: var(--mono); font-size: 0.9rem; color: var(--ink-soft); min-width: 2.4ch; }
-    .prob h3 { margin: 0; font-size: clamp(1.9rem, 3vw, 2.6rem); letter-spacing: -0.03em; line-height: 1.05; font-weight: 750; font-stretch: 85%; }
+    .prob h3 { margin: 0; font-size: clamp(1.9rem, 3vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.05; font-weight: 750; font-stretch: 94%; }
     .prob h3 a { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 6px; background-image: linear-gradient(transparent 58%, color-mix(in srgb, #f3d34a 70%, transparent) 58%, color-mix(in srgb, #f3d34a 70%, transparent) 92%, transparent 92%); background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .45s cubic-bezier(.6,.05,.3,1); }
     @media (prefers-color-scheme: dark) { .prob h3 a { background-image: linear-gradient(transparent 58%, rgba(255,132,102,.32) 58%, rgba(255,132,102,.32) 92%, transparent 92%); } }
     .prob:hover h3 a, .prob h3 a:focus-visible { background-size: 100% 100%; }
@@ -249,26 +249,30 @@
     .ll-group:last-of-type .looseleaf { margin-bottom: 2.5rem; }
     .grp { margin: 0 0 0.55rem; font-family: var(--mono); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); line-height: 1; }
     .grp::before { content: ""; display: inline-block; width: 0.7em; height: 0.7em; margin-right: 0.5em; background: var(--red); vertical-align: -0.05em; }
-    .looseleaf li { display: grid; align-items: baseline; grid-template-columns: 1.6rem 1fr; gap: 0 0.5rem; padding: 1.15rem 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+    .looseleaf li { display: grid; align-items: baseline; grid-template-columns: 1.6rem 1fr; gap: 0 0.5rem; padding: 1.15rem 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 26%, transparent); }
     .looseleaf li[hidden] { display: none; }
-    @media (min-width: 760px) { .looseleaf li { grid-template-columns: 3rem 14rem 1fr auto; column-gap: 2rem; align-items: baseline; } }
+    @media (min-width: 760px) { .looseleaf li { grid-template-columns: 3rem 15rem minmax(0, 44rem); column-gap: 2rem; align-items: baseline; } }
     .looseleaf .n { font-family: var(--mono); color: var(--ink-soft); font-size: 0.9rem; }
-    .looseleaf h3 { margin: 0; font-size: 1.5rem; letter-spacing: -0.02em; font-weight: 700; font-stretch: 85%; }
+    .looseleaf h3 { margin: 0; font-size: 1.4rem; letter-spacing: -0.01em; font-weight: 700; font-stretch: 100%; }
     .looseleaf p { margin: 0.2rem 0 0; color: var(--ink-soft); grid-column: 2; }
-        .looseleaf .src { grid-column: 2; justify-self: start; margin-top: 0.5rem; font-family: var(--mono); font-size: 0.88rem; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 5px; white-space: nowrap; padding: 0.3rem 0; }
-    .looseleaf .src:hover { color: var(--red); }
-    @media (min-width: 760px) { .looseleaf .src { grid-column: auto; margin-top: 0; margin-left: 1.5rem; } }
-    @media (max-width: 759px) { .looseleaf li { grid-template-columns: auto 1fr; } .looseleaf li > p, .looseleaf li > .src { grid-column: 1 / -1; } }
+        .looseleaf li { position: relative; }
+    .looseleaf h3 a { text-decoration: none; }
+    .looseleaf h3 a::after { content: ""; position: absolute; inset: 0; }
+    .looseleaf .arr { color: var(--red); font-weight: 600; }
+    .looseleaf li:hover h3 a, .looseleaf h3 a:focus-visible { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+    .looseleaf li:hover { background: color-mix(in srgb, var(--ink) 4%, transparent); }
+    
+    @media (max-width: 759px) { .looseleaf li { grid-template-columns: auto 1fr; } .looseleaf li > p { grid-column: 1 / -1; } }
         @media (min-width: 760px) { .looseleaf p { grid-column: auto; margin: 0; } }
     
     /* Answer key: four index cards */
     .key { padding: 3rem 0 4.5rem; border-top: 2px solid var(--ink); }
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
     .key .big { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; font-weight: 400; color: var(--ink-soft); margin: 0.9rem 0 2rem; max-width: 40ch; }
-    .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .key .cards { margin: 0; padding: 0; list-style: none; counter-reset: k; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 760px) { .key .cards { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
     .key .cards li { counter-increment: k; background: var(--card); border: 1px solid var(--frame-edge); border-top: 3px solid var(--red); padding: 1.2rem 1.4rem 1.3rem; }
-    .key .cards h3 { margin: 0 0 0.5rem; font-size: 1.3rem; letter-spacing: -0.01em; font-weight: 700; font-stretch: 90%; }
+    .key .cards h3 { margin: 0 0 0.5rem; font-size: 1.25rem; letter-spacing: 0; font-weight: 700; font-stretch: 100%; }
     .key .cards h3::before { content: counter(k, lower-alpha) ") "; font-family: var(--hand); font-size: 1.5rem; color: var(--red); }
     .key .cards p { margin: 0; color: color-mix(in srgb, var(--ink) 84%, var(--card)); }
     .key .cards a { color: var(--ink); font-weight: 650; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 4px; }
@@ -330,9 +334,9 @@
       </section>
 
       <div class="score reveal" role="group" aria-label="Scorecard">
-        <div class="grade"><span class="num">20/20</span><span class="lbl">problems attempted</span></div>
-        <div><span class="num">11</span><span class="lbl">live in a browser</span></div>
-        <div><span class="num">9</span><span class="lbl">more on GitHub</span></div>
+        <div class="grade"><span class="num">20/20</span><span class="lbl">attempted</span></div>
+        <div><span class="num">11</span><span class="lbl">live now</span></div>
+        <div><span class="num">9</span><span class="lbl">source only</span></div>
         <div><span class="num">10+</span><span class="lbl">years teaching</span></div>
       </div>
 
@@ -367,7 +371,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img style="--pos: left top" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="verSHion: Turn anything into an exam, beside a printed linear equations quiz."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
+            <figure class="print"><img style="--ar: 16 / 10" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="verSHion: Turn anything into an exam, beside a printed linear equations quiz."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
             <p>Question banks in, printed tests out. Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
@@ -375,7 +379,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img style="--pos: left top" src="img/shcode.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
+            <figure class="print"><img style="--ar: 16 / 10" src="img/shcode.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
             <p>A whole classroom platform for high school JavaScript: lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
@@ -440,29 +444,29 @@
         </div>
 
         <div class="sec-title"><h2 id="loose-title">Loose-leaf</h2><span class="note" style="font-size:1.5rem" aria-hidden="true">source only. the work is shown.</span></div>
-        <p class="sec-sub">Source on GitHub, ready to clone. Several open straight from a single HTML file.</p>
+        <p class="sec-sub">Source on GitHub, ready to clone. Several open straight from a single HTML file. Each name opens its repository.</p>
         <div class="ll-group" data-cat="class">
           <h3 class="grp">The classroom</h3>
           <ol class="looseleaf">
-            <li><span class="n">12.</span><div class="nm"><h3>transforma<span class="sh">SH</span>ion</h3></div><p>Tracing paper over a coordinate grid. Slide, turn and flip it. It never names the move, because that is the student's job.</p><a class="src" href="https://github.com/shuff57/transformaSHion">View source<span aria-hidden="true"> &#8599;</span></a></li>
-            <li><span class="n">13.</span><div class="nm"><h3>ten<span class="sh">SH</span>ion</h3></div><p>A diagnostic that tells "can't start" from "won't start" from "doesn't know enough yet," and catches reading versus rushing.</p><a class="src" href="https://github.com/shuff57/tenshion">View source<span aria-hidden="true"> &#8599;</span></a></li>
-            <li><span class="n">14.</span><div class="nm"><h3>O.G.R.E</h3></div><p>Grades 30 written responses in minutes on a fine-tuned local model. Student data never touches a cloud.</p><a class="src" href="https://github.com/shuff57/O.G.R.E-OllamaGradingRubricEvaluator">View source<span aria-hidden="true"> &#8599;</span></a></li>
-            <li><span class="n">15.</span><div class="nm"><h3>vi<span class="sh">SH</span>ion</h3></div><p>Handwriting OCR for stacks of student pages, on a local llama.cpp vision server. One HTML file, no build.</p><a class="src" href="https://github.com/shuff57/viSHion">View source<span aria-hidden="true"> &#8599;</span></a></li>
-            <li><span class="n">16.</span><div class="nm"><h3>syllabus-quickref</h3></div><p>The syllabus a student reads in ninety seconds and a parent searches in ten. Every fact traces back to the source.</p><a class="src" href="https://github.com/shuff57/syllabus-quickref">View source<span aria-hidden="true"> &#8599;</span></a></li>
+            <li><span class="n">12.</span><div class="nm"><h3><a href="https://github.com/shuff57/transformaSHion">transforma<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Tracing paper over a coordinate grid. Slide, turn and flip it. It never names the move, because that is the student's job.</p></li>
+            <li><span class="n">13.</span><div class="nm"><h3><a href="https://github.com/shuff57/tenshion">ten<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>A diagnostic that tells "can't start" from "won't start" from "doesn't know enough yet," and catches reading versus rushing.</p></li>
+            <li><span class="n">14.</span><div class="nm"><h3><a href="https://github.com/shuff57/O.G.R.E-OllamaGradingRubricEvaluator">O.G.R.E<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Grades 30 written responses in minutes on a fine-tuned local model. Student data never touches a cloud.</p></li>
+            <li><span class="n">15.</span><div class="nm"><h3><a href="https://github.com/shuff57/viSHion">vi<span class="sh">SH</span>ion<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Handwriting OCR for stacks of student pages, on a local llama.cpp vision server. One HTML file, no build.</p></li>
+            <li><span class="n">16.</span><div class="nm"><h3><a href="https://github.com/shuff57/syllabus-quickref">syllabus-quickref<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>The syllabus a student reads in ninety seconds and a parent searches in ten. Every fact traces back to the source.</p></li>
           </ol>
         </div>
         <div class="ll-group" data-cat="make">
           <h3 class="grp">Math &amp; making</h3>
           <ol class="looseleaf">
-            <li><span class="n">17.</span><div class="nm"><h3>re<span class="sh">SH</span>ape CAD</h3></div><p>CAD in plain words, on its own B-rep kernel in Rust. A shape it can't build yet is refused in a sentence and never faked.</p><a class="src" href="https://github.com/shuff57/reshape-cad">View source<span aria-hidden="true"> &#8599;</span></a></li>
-            <li><span class="n">18.</span><div class="nm"><h3>re<span class="sh">SH</span>ape</h3></div><p>Turns STL and 3MF meshes of machined parts back into STEP solids with true analytic geometry.</p><a class="src" href="https://github.com/shuff57/reSHape">View source<span aria-hidden="true"> &#8599;</span></a></li>
+            <li><span class="n">17.</span><div class="nm"><h3><a href="https://github.com/shuff57/reshape-cad">re<span class="sh">SH</span>ape CAD<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>CAD in plain words, on its own B-rep kernel in Rust. A shape it can't build yet is refused in a sentence and never faked.</p></li>
+            <li><span class="n">18.</span><div class="nm"><h3><a href="https://github.com/shuff57/reSHape">re<span class="sh">SH</span>ape<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>Turns STL and 3MF meshes of machined parts back into STEP solids with true analytic geometry.</p></li>
           </ol>
         </div>
         <div class="ll-group" data-cat="lab">
           <h3 class="grp">Home lab</h3>
           <ol class="looseleaf">
-            <li><span class="n">19.</span><div class="nm"><h3>LHD Launcher</h3></div><p>A motion-forward home screen and photo screensaver for Roku TV. No root and no firmware flashing.</p><a class="src" href="https://github.com/shuff57/roku-lhd-launcher">View source<span aria-hidden="true"> &#8599;</span></a></li>
-            <li><span class="n">20.</span><div class="nm"><h3>Agent-Evo</h3></div><p>The agent framework behind the rest of this page. It reads how a session went and proposes small edits to itself.</p><a class="src" href="https://github.com/shuff57/agent-evo">View source<span aria-hidden="true"> &#8599;</span></a></li>
+            <li><span class="n">19.</span><div class="nm"><h3><a href="https://github.com/shuff57/roku-lhd-launcher">LHD Launcher<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>A motion-forward home screen and photo screensaver for Roku TV. No root and no firmware flashing.</p></li>
+            <li><span class="n">20.</span><div class="nm"><h3><a href="https://github.com/shuff57/agent-evo">Agent-Evo<span class="arr" aria-hidden="true"> &#8599;</span></a></h3></div><p>The agent framework behind the rest of this page. It reads how a session went and proposes small edits to itself.</p></li>
           </ol>
         </div>
       </section>
