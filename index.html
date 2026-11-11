@@ -157,7 +157,7 @@
     .stack:hover .p2 { transform: translate(12px, -4px); }
     .stack:hover .p3 { transform: translate(-4px, 10px); }
     .stack .note { position: absolute; right: 1%; top: 3%; font-size: 1.6rem; rotate: 5deg; z-index: 4; max-width: 9ch; text-align: right; }
-    @media (max-width: 899px) { .stack { justify-self: center; aspect-ratio: 1.02; } .stack .note, .stack .p3 { display: none; } .stack .p1 { width: 74%; top: 5%; left: 2%; } .stack .p2 { width: 70%; top: 51%; right: 2%; } }
+    @media (max-width: 899px) { .hero { gap: 1.75rem; padding-bottom: 2rem; } .stack { justify-self: center; aspect-ratio: 1.02; max-width: 360px; } .stack .note, .stack .p3 { display: none; } .stack .p1 { width: 74%; top: 5%; left: 2%; } .stack .p2 { width: 70%; top: 51%; right: 2%; } }
 
     /* Scorecard: the grade box in the corner of every test */
     .score {
@@ -172,7 +172,7 @@
     .score .grade { position: relative; }
     .score .grade .num { color: var(--red); }
     .score .grade .note { display: none; }
-    @media (max-width: 759px) { .score .grade .note { display: none; } .score .num { height: 3.2rem; } }
+    @media (max-width: 759px) { .score { grid-template-columns: repeat(4, 1fr); margin-bottom: 2.5rem; } .score > div { padding: 0.7rem 0.55rem 0.6rem; border-bottom: 0; } .score > div:last-child { border-right: 0; } .score .num { height: 2.4rem; font-size: 2rem; } .score .lbl { font-size: 0.7rem; } }
 
     /* Section titles */
     .sec-title { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin: 0 0 0.6rem; }
@@ -227,7 +227,7 @@
     .prob h3 a { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 6px; background-image: linear-gradient(transparent 58%, color-mix(in srgb, #f3d34a 70%, transparent) 58%, color-mix(in srgb, #f3d34a 70%, transparent) 92%, transparent 92%); background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .45s cubic-bezier(.6,.05,.3,1); }
     @media (prefers-color-scheme: dark) { .prob h3 a { background-image: linear-gradient(transparent 58%, rgba(255,132,102,.32) 58%, rgba(255,132,102,.32) 92%, transparent 92%); } }
     .prob:hover h3 a, .prob h3 a:focus-visible { background-size: 100% 100%; }
-    .prob p { margin: 0; color: var(--ink-soft); max-width: 58ch; }
+    .prob p { margin: 0; color: var(--ink-soft); max-width: 50ch; }
     .prob .given { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-soft); }
     .prob .given b { color: var(--ink); font-weight: 600; }
     .prob .links { display: flex; align-items: center; gap: 1.25rem; font-family: var(--mono); font-size: 0.85rem; margin-top: 0.35rem; }
@@ -252,7 +252,7 @@
     .grp::before { content: ""; display: inline-block; width: 0.7em; height: 0.7em; margin-right: 0.5em; background: var(--red); vertical-align: -0.05em; }
     .looseleaf li { display: grid; align-items: baseline; grid-template-columns: 1.6rem 1fr; gap: 0 0.5rem; padding: 1.15rem 0; border-bottom: 1px dashed color-mix(in srgb, var(--ink) 40%, transparent); }
     .looseleaf li[hidden] { display: none; }
-    @media (min-width: 760px) { .looseleaf li { grid-template-columns: 2.4rem 15rem minmax(0, 44rem); column-gap: 1.75rem; align-items: baseline; } }
+    @media (min-width: 760px) { .looseleaf li { grid-template-columns: 2.4rem 15rem minmax(0, 36rem); column-gap: 1.75rem; align-items: baseline; } }
     .looseleaf .n { font-family: var(--mono); color: var(--ink-soft); font-size: 0.9rem; }
     .looseleaf h3 { margin: 0; font-size: 1.4rem; letter-spacing: -0.01em; font-weight: 700; font-stretch: 100%; }
     .looseleaf p { margin: 0.2rem 0 0; color: var(--ink-soft); grid-column: 2; }
@@ -275,9 +275,9 @@
     .key .cards li { counter-increment: k; background: var(--card); border: 1px solid var(--frame-edge); border-top: 3px solid var(--red); padding: 1.2rem 1.4rem 1.3rem; }
     .key .cards h3 { margin: 0 0 0.5rem; font-size: 1.25rem; letter-spacing: 0; font-weight: 700; font-stretch: 100%; }
     .key .cards h3::before { content: counter(k, lower-alpha) ") "; font-family: var(--hand); font-size: 1.5rem; color: var(--red); }
-    .key .cards p { margin: 0; color: color-mix(in srgb, var(--ink) 84%, var(--card)); }
-    .key .cards a { color: var(--ink); font-weight: 650; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-    .key .cards a:hover { color: var(--red); }
+    .key .cards p { margin: 0; color: var(--ink); }
+    .key .cards a { color: var(--red); font-weight: 600; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+    .key .cards a:hover { color: var(--ink); }
     @media (max-width: 759px) {
       .key .cards { gap: 0; }
       .key .cards li { background: none; border: 0; border-left: 3px solid var(--red); border-bottom: 1px dashed color-mix(in srgb, var(--ink) 30%, transparent); padding: 0.85rem 0 0.95rem 0.9rem; }
@@ -334,7 +334,7 @@
         <div class="stack">
           <figure class="print p1"><img src="img/rashio.webp" width="1280" height="800" alt="rāSHio, an online statistics calculator, listing its tools." fetchpriority="high"><figcaption>rāSHio</figcaption></figure>
           <figure class="print p2"><img src="img/vershion.webp" width="1280" height="800" alt="verSHion's landing page: Turn anything into an exam, beside a printed linear equations quiz."><figcaption>verSHion</figcaption></figure>
-          <figure class="print p3"><img src="img/equashion.webp" width="1280" height="800" alt="equaSHion, an equation editor, showing the quadratic formula."><figcaption>equaSHion</figcaption></figure>
+          <figure class="print p3"><img src="img/equashion-hero.webp" width="1280" height="800" alt="equaSHion, an equation editor, showing the quadratic formula."><figcaption>equaSHion</figcaption></figure>
           <p class="note" aria-hidden="true">ink smudges are a feature</p>
         </div>
       </section>
@@ -377,7 +377,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img style="--ar: 16 / 10" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="verSHion: Turn anything into an exam, beside a printed linear equations quiz."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
+            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/vershion-phone.webp"><img style="--ar: 4 / 3" src="img/vershion-card.webp" width="1280" height="800" loading="lazy" alt="verSHion: Turn anything into an exam, beside a printed linear equations quiz."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
             <p>Question banks in, printed tests out. Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
@@ -385,7 +385,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print"><img style="--ar: 16 / 10" src="img/shcode.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
+            <figure class="print"><picture><source media="(max-width: 759px)" srcset="img/shcode-phone.webp"><img style="--ar: 16 / 10" src="img/shcode.webp" width="1280" height="800" loading="lazy" alt="shCode's lesson list, Chapter 1: JavaScript Fundamentals."></picture><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
             <p>A whole classroom platform for high school JavaScript: lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
