@@ -39,17 +39,17 @@
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --paper: #141c18;
-        --grid: rgba(190, 220, 200, 0.045);
-        --grid-major: rgba(190, 220, 200, 0.07);
-        --ink: #e6ece4;
-        --ink-soft: #c6d1c9;
+        --paper: #1b1e23;
+        --grid: rgba(120, 170, 230, 0.07);
+        --grid-major: rgba(120, 170, 230, 0.14);
+        --ink: #e8eaee;
+        --ink-soft: #c3c8d0;
         --red: #ff8466;
         --tape: #c9bd8a;
-        --card: #2a3630;
-        --frame: #cdd5c8;
+        --card: #272b32;
+        --frame: #d3d6db;
         --frame-edge: rgba(0, 0, 0, 0.5);
-        --hole: #0c110e;
+        --hole: #0d0f12;
         --coil: #5f676d;
         --shadow: 0 1px 0 rgba(255,255,255,0.03), 0 18px 34px -20px rgba(0, 0, 0, 0.9);
       }
@@ -145,8 +145,8 @@
     /* Spec cards: one real, readable detail per project, set as type on paper */
     .spec-body { container-type: inline-size; aspect-ratio: 16 / 10; background: #fbfaf3; color: #17201b; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 1.6rem 1.4rem 1rem; overflow: hidden;
       background-image: linear-gradient(rgba(74,134,204,.16) 1px, transparent 1px); background-size: 100% 1.6rem; }
-    @media (prefers-color-scheme: dark) { .spec-body { background-color: #dde2d6; } }
-    .spec-body.sp-dark { background: #1d2521; color: #eef2ec; background-image: none; }
+    @media (prefers-color-scheme: dark) { .spec-body { background-color: #dde0e4; } }
+    .spec-body.sp-dark { background: #22262c; color: #eef2ec; background-image: none; }
     .sp-k { font-family: var(--mono); font-size: max(0.72rem, 3.6cqi); color: #6a5a4a; text-transform: uppercase; letter-spacing: 0.06em; }
     .sp-dark .sp-k { color: #a9b6ad; }
     .sp-chip { font-style: normal; background: #2f6b4a; color: #fff; padding: 0 0.4em; border-radius: 3px; }
@@ -156,7 +156,7 @@
     .sp-q { font-family: var(--sans); font-weight: 650; font-size: max(1.15rem, 6.4cqi); line-height: 1.2; }
     .sp-list, .sp-lessons { margin: 0.2rem 0 0; padding: 0; list-style: none; font-size: max(0.9rem, 4.6cqi); line-height: 1.5; }
     .sp-list li::before { content: "\2014  "; color: #b8321c; }
-    .sp-lessons li { font-family: var(--mono); background: #2a3430; margin-top: 0.35rem; padding: 0.3em 0.6em; border-radius: 3px; font-size: max(0.8rem, 3.9cqi); }
+    .sp-lessons li { font-family: var(--mono); background: #30353d; margin-top: 0.35rem; padding: 0.3em 0.6em; border-radius: 3px; font-size: max(0.8rem, 3.9cqi); }
     .sp-lessons b { color: #9fe3a0; margin-right: 0.8em; }
     .sp-choices, .sp-chips, .sp-tabs, .sp-gauges { display: flex; flex-wrap: wrap; gap: 0.45rem 0.6rem; }
     .sp-choices span { font-size: max(1rem, 5cqi); color: #37423c; }
@@ -557,7 +557,7 @@
           <p class="bio">Steven Huff: math educator, CS teacher and curriculum developer, ten-plus years from elementary through college. The full CV lives at <a href="https://steven.lefthanddev.com/">steven.lefthanddev.com</a>.</p>
         </div>
         <ol class="cards">
-          <li><h3>Why "Left Hand"?</h3><p>Because I&#8217;m left-handed. Lefties drag their hand through wet ink, so every line gets checked twice. The smudge is a feature. So is the name: <strong class="kicker">LeftHandDev</strong>.</p></li>
+          <li><h3>Why "Left Hand"?</h3><p>Because I&#8217;m left-handed. Lefties drag their hand through wet ink, so every line gets checked twice. The smudge is a feature.</p></li>
           <li><h3>Why the capital SH?</h3><p>They're the initials. rā<span class="sh">SH</span>io, book<span class="sh">SH</span>elf, ver<span class="sh">SH</span>ion: the tools sign their own names.</p></li>
           <li><h3>What's the rule?</h3><p>A student should open the page, get the answer, and get back to the homework. Student data stays on the student's machine wherever possible.</p></li>
         </ol>
@@ -565,7 +565,7 @@
     </main>
 
     <footer>
-      <span>Left Hand Dev &middot; <span id="year">2026</span></span>
+      <span>LeftHandDev &middot; <span id="year">2026</span></span>
       <span class="note" aria-hidden="true">show your work.</span>
       <span><a href="https://steven.lefthanddev.com/">steven.lefthanddev.com</a> &middot; <a href="https://github.com/shuff57">github.com/shuff57</a></span>
     </footer>
