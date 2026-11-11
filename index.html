@@ -32,8 +32,8 @@
     /* Blue-ruled graph paper by day, chalkboard by night. One accent: the red pencil. */
     :root {
       --paper: #f4f4f1;
-      --grid: rgba(74, 134, 204, 0.10);
-      --grid-major: rgba(74, 134, 204, 0.18);
+      --grid: rgba(74, 134, 204, 0.08);
+      --grid-major: rgba(74, 134, 204, 0.14);
       --ink: #1c1f24;
       --ink-soft: #414852;
       --red: #b8321c;
@@ -51,8 +51,8 @@
     }
     :root[data-theme="dark"] {
         --paper: #1b1e23;
-      --grid: rgba(120, 170, 230, 0.05);
-      --grid-major: rgba(120, 170, 230, 0.10);
+      --grid: rgba(120, 170, 230, 0.035);
+      --grid-major: rgba(120, 170, 230, 0.07);
       --ink: #e8eaee;
       --ink-soft: #c3c8d0;
       --red: #ff8466;
@@ -285,7 +285,7 @@
     @media (min-width: 760px) {
       .problems { grid-template-columns: 1fr; row-gap: 0; }
       .problems .feature { margin-bottom: 3.5rem; }
-      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 38rem) minmax(240px, 330px); justify-content: start; grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 4rem; row-gap: 0.6rem; padding: 2rem 0 2.2rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
+      .prob.s3 { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 40rem) minmax(240px, 340px); justify-content: space-between; grid-template-rows: 1fr auto auto auto auto 1fr; column-gap: 3rem; row-gap: 0.6rem; padding: 2rem 0 2.2rem; border-top: 1px dashed color-mix(in srgb, var(--ink) 35%, transparent); }
       .prob.s3 .print { grid-column: 2; grid-row: 1 / -1; align-self: center; margin: 0; }
       .prob.s3 > :not(.print) { grid-column: 1; }
       .prob.s3 .head { grid-row: 2; } .prob.s3 > p { grid-row: 3; } .prob.s3 .given { grid-row: 4; } .prob.s3 .links { grid-row: 5; }
@@ -351,10 +351,11 @@
     /* Answer key: four index cards */
     .key { padding: 3rem 0 4.5rem; border-top: 2px solid var(--ink); }
     .key .sig { color: var(--red); font-weight: 300; margin-right: 0.1em; }
+    @media (min-width: 900px) { .key { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); column-gap: 4rem; align-items: start; } .key .cards { grid-template-columns: 1fr !important; gap: 0 !important; margin-top: 4.6rem; } .key .cards li { padding: 1rem 0 1.1rem; } .key .who { margin-bottom: 0; } }
     .key .who { margin: 1.5rem 0 2.75rem; padding-left: 1.25rem; border-left: 4px solid var(--red); max-width: 46rem; }
     .key .who-name { margin: 0; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 750; font-stretch: 90%; letter-spacing: -0.02em; line-height: 1.05; }
     .key .who-role { margin: 0.45rem 0 0; font-size: 1.12rem; color: var(--ink); max-width: 52ch; }
-    .key .who-line { margin: 0.6rem 0 1.1rem; font-family: var(--hand); font-size: 1.45rem; color: var(--red); line-height: 1.15; }
+    .key .who-line { margin: 0.6rem 0 1.1rem; font-family: var(--hand); font-size: 1.45rem; max-width: 30ch; color: var(--red); line-height: 1.15; }
     .key .who-cv { display: inline-flex; text-decoration: none; font-weight: 650; background: var(--ink); color: var(--paper); padding: 0.6rem 1.05rem; border-radius: 3px; box-shadow: 3px 3px 0 var(--red); }
     .key .who-cv:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--red); }
     .key .bio { margin: 0 0 2.5rem; max-width: 60ch; font-size: 1.12rem; color: var(--ink); padding-left: 1.1rem; border-left: 3px solid var(--red); }
@@ -427,7 +428,7 @@
           </div>
         </div>
         <div class="stack">
-          <figure class="print p1"><a class="card-link" href="https://rashio.app/" tabindex="-1" aria-hidden="true" title="Open rāSHio"></a><img src="img/rashio-app.webp" width="1280" height="800" alt="rāSHio drawing a histogram and box plot of sample ages." fetchpriority="high"><figcaption>rāSHio</figcaption></figure>
+          <figure class="print p1"><a class="card-link" href="https://rashio.app/" tabindex="-1" aria-hidden="true" title="Open rāSHio"></a><picture><source media="(max-width: 899px)" srcset="img/rashio-chart.webp"><img src="img/rashio-app.webp" width="1280" height="800" alt="rāSHio drawing a histogram and box plot of sample ages." fetchpriority="high"></picture><figcaption>rāSHio</figcaption></figure>
           <figure class="print p2"><a class="card-link" href="https://vershion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open verSHion"></a><img src="img/vershion-phone.webp" width="1024" height="768" alt="A printed linear equations quiz made with verSHion."><figcaption>verSHion</figcaption></figure>
           <figure class="print p3"><a class="card-link" href="https://equashion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open equaSHion"></a><img src="img/equashion-hero.webp" width="1280" height="800" alt="equaSHion, an equation editor, showing the quadratic formula."><figcaption>equaSHion</figcaption></figure>
           <p class="note" aria-hidden="true">ink smudges are a feature</p>
@@ -477,7 +478,7 @@
           <article class="prob s3 reveal" data-cat="class">
             <figure class="print spec"><a class="card-link" href="https://shcode.pages.dev/" tabindex="-1" aria-hidden="true" title="Open shCode"></a><div class="spec-body sp-dark"><span class="sp-k">Chapter 1 &middot; JavaScript Fundamentals</span><ol class="sp-lessons"><li><b>1.1</b> Software Lifecycle</li><li><b>1.2</b> Variables and Data Types</li><li><b>1.3</b> Documentation and Coding Conventions</li></ol></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
-            <p><strong class="lead">A whole classroom platform for high school JavaScript:</strong> lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
+            <p><strong class="lead">A JavaScript classroom platform.</strong> Lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
             <span class="links"><a class="go" href="https://shcode.pages.dev/">Open it &rarr;</a><a href="https://github.com/shuff57/shCode">Source</a></span>
           </article>
