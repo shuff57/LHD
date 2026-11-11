@@ -197,6 +197,9 @@
     .sp-sort em { font-style: italic; color: #f0a35e; }
     .sp-flag { color: #a9b6ad; font-family: var(--mono); font-size: max(0.8rem, 3.7cqi); }
     .spec { background: var(--frame); }
+    .card-link { position: absolute; inset: 0; z-index: 3; border-radius: 2px; }
+    .print:has(.card-link) { cursor: pointer; }
+    .print:has(.card-link):hover { box-shadow: 0 0 0 2px var(--red), var(--shadow); }
     .print picture { display: block; }
     :root[data-theme="dark"] .prob .print img { filter: brightness(0.9); }
     .print img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
@@ -409,9 +412,9 @@
           </div>
         </div>
         <div class="stack">
-          <figure class="print p1"><img src="img/rashio-app.webp" width="1280" height="800" alt="rāSHio drawing a histogram and box plot of sample ages." fetchpriority="high"><figcaption>rāSHio</figcaption></figure>
-          <figure class="print p2"><img src="img/vershion-phone.webp" width="1024" height="768" alt="A printed linear equations quiz made with verSHion."><figcaption>verSHion</figcaption></figure>
-          <figure class="print p3"><img src="img/equashion-hero.webp" width="1280" height="800" alt="equaSHion, an equation editor, showing the quadratic formula."><figcaption>equaSHion</figcaption></figure>
+          <figure class="print p1"><a class="card-link" href="https://rashio.app/" tabindex="-1" aria-hidden="true" title="Open rāSHio"></a><img src="img/rashio-app.webp" width="1280" height="800" alt="rāSHio drawing a histogram and box plot of sample ages." fetchpriority="high"><figcaption>rāSHio</figcaption></figure>
+          <figure class="print p2"><a class="card-link" href="https://vershion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open verSHion"></a><img src="img/vershion-phone.webp" width="1024" height="768" alt="A printed linear equations quiz made with verSHion."><figcaption>verSHion</figcaption></figure>
+          <figure class="print p3"><a class="card-link" href="https://equashion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open equaSHion"></a><img src="img/equashion-hero.webp" width="1280" height="800" alt="equaSHion, an equation editor, showing the quadratic formula."><figcaption>equaSHion</figcaption></figure>
           <p class="note" aria-hidden="true">ink smudges are a feature</p>
         </div>
         <p class="stack-cap">rāSHio drawing a histogram and box plot, live in the browser.</p>
@@ -433,7 +436,7 @@
 
         <div class="problems">
           <article class="prob feature reveal" data-cat="class">
-            <figure class="print"><img src="img/rashio-app.webp" width="1280" height="800" loading="lazy" alt="rāSHio's preview app: a histogram and box plot of sample ages with min, quartiles, median and max."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">say it: ray-she-oh</span></figcaption></figure>
+            <figure class="print"><a class="card-link" href="https://rashio.app/" tabindex="-1" aria-hidden="true" title="Open rāSHio"></a><img src="img/rashio-app.webp" width="1280" height="800" loading="lazy" alt="rāSHio's preview app: a histogram and box plot of sample ages with min, quartiles, median and max."><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">say it: ray-she-oh</span></figcaption></figure>
             <div class="head"><span class="n">1.</span><h3><a href="https://rashio.app/">rā<span class="sh">SH</span>io</a></h3></div>
             <p><strong class="lead">A statistics calculator for the intro course, built to replace the StatCrunch and TI-84 shuffle.</strong> A spreadsheet up front, then t-tests, ANOVA, chi-square and probability shading, and every chart redraws as the data changes. The data never leaves the student's machine.</p>
             <span class="given"><b>Given:</b> browser, D3, Cloudflare D1</span>
@@ -441,7 +444,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><div class="spec-body"><span class="sp-k">open textbooks, rewritten</span><span class="sp-big">180+</span><span class="sp-sub">sections to read</span><ul class="sp-list"><li>Integrated Math 1</li><li>Introduction to Statistics</li><li>Calculus Volume 1</li></ul></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://oerbookshelf.app/" tabindex="-1" aria-hidden="true" title="Open bookSHelf"></a><div class="spec-body"><span class="sp-k">open textbooks, rewritten</span><span class="sp-big">180+</span><span class="sp-sub">sections to read</span><ul class="sp-list"><li>Integrated Math 1</li><li>Introduction to Statistics</li><li>Calculus Volume 1</li></ul></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">2.</span><h3><a href="https://oerbookshelf.app/">book<span class="sh">SH</span>elf</a></h3></div>
             <p><strong class="lead">Open textbooks, rewritten for the student who actually reads them:</strong> plain-English explanations, worked examples, collapsible solutions. An 11&#8209;step pipeline produces every page.</p>
             <span class="given"><b>Given:</b> 180+ sections, MathJax</span>
@@ -449,7 +452,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><div class="spec-body"><span class="sp-k">Linear Equations Quiz &middot; <em class="sp-chip">Version A</em></span><span class="sp-q">1. Solve for <i>x</i>:&nbsp; 3<i>x</i> + 5 = 20</span><span class="sp-choices"><span>(A) 3</span><span>(B) 5</span><span>(C) 15</span><span>(D) 25</span></span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://vershion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open verSHion"></a><div class="spec-body"><span class="sp-k">Linear Equations Quiz &middot; <em class="sp-chip">Version A</em></span><span class="sp-q">1. Solve for <i>x</i>:&nbsp; 3<i>x</i> + 5 = 20</span><span class="sp-choices"><span>(A) 3</span><span>(B) 5</span><span>(C) 15</span><span>(D) 25</span></span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">version A, version B.</span></figcaption></figure>
             <div class="head"><span class="n">3.</span><h3><a href="https://vershion.lefthanddev.com/">ver<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">Question banks in, printed tests out.</strong> Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.</p>
             <span class="given"><b>Given:</b> Rust, egui, WebAssembly</span>
@@ -457,7 +460,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">Chapter 1 &middot; JavaScript Fundamentals</span><ol class="sp-lessons"><li><b>1.1</b> Software Lifecycle</li><li><b>1.2</b> Variables and Data Types</li><li><b>1.3</b> Documentation and Coding Conventions</li></ol></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://shcode.pages.dev/" tabindex="-1" aria-hidden="true" title="Open shCode"></a><div class="spec-body sp-dark"><span class="sp-k">Chapter 1 &middot; JavaScript Fundamentals</span><ol class="sp-lessons"><li><b>1.1</b> Software Lifecycle</li><li><b>1.2</b> Variables and Data Types</li><li><b>1.3</b> Documentation and Coding Conventions</li></ol></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">the course I actually teach</span></figcaption></figure>
             <div class="head"><span class="n">4.</span><h3><a href="https://shcode.pages.dev/"><span class="sh">sh</span>Code</a></h3></div>
             <p><strong class="lead">A whole classroom platform for high school JavaScript:</strong> lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.</p>
             <span class="given"><b>Given:</b> Next.js, CodeMirror, D1</span>
@@ -465,7 +468,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><div class="spec-body"><span class="sp-k">Course syllabus &middot; section 4</span><span class="sp-q">Late work</span><span class="sp-sub">Parent or guardian, initial to show you read this section.</span><span class="sp-initial"><span class="sp-box">S.H.</span> initialed</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">no backpack required.</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://inishial.pages.dev/" tabindex="-1" aria-hidden="true" title="Open iniSHial"></a><div class="spec-body"><span class="sp-k">Course syllabus &middot; section 4</span><span class="sp-q">Late work</span><span class="sp-sub">Parent or guardian, initial to show you read this section.</span><span class="sp-initial"><span class="sp-box">S.H.</span> initialed</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">no backpack required.</span></figcaption></figure>
             <div class="head"><span class="n">5.</span><h3><a href="https://inishial.pages.dev/">ini<span class="sh">SH</span>ial</a></h3></div>
             <p><strong class="lead">A living syllabus that parents initial section by section,</strong> so a signature means they read the late-work policy.</p>
             <span class="given"><b>Given:</b> vanilla JS, no build</span>
@@ -473,7 +476,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">the whole engine, as globals</span><span class="sp-code">setup()&nbsp; draw()</span><span class="sp-chips"><span>Sprite</span><span>Group</span><span>world</span><span>camera</span><span>kb</span><span>mouse</span></span></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://shuff57.github.io/moshion/" tabindex="-1" aria-hidden="true" title="Open moSHion"></a><div class="spec-body sp-dark"><span class="sp-k">the whole engine, as globals</span><span class="sp-code">setup()&nbsp; draw()</span><span class="sp-chips"><span>Sprite</span><span>Group</span><span>world</span><span>camera</span><span>kb</span><span>mouse</span></span></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">6.</span><h3><a href="https://shuff57.github.io/moshion/">mo<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">A 2D game engine for beginners:</strong> sprites and real Box2D physics in a handful of globals. Write setup() and draw(), and the engine runs them.</p>
             <span class="given"><b>Given:</b> planck.js, zero imports</span>
@@ -481,7 +484,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><div class="spec-body"><span class="sp-k">steps, in the student&#8217;s words</span><ol class="sp-steps"><li><b>slide</b> right 3, down 2</li><li><b>turn</b> 90&deg; about (0, 0)</li><li><b>flip</b> over <i>y</i> = <i>x</i></li></ol><span class="sp-sub">The tool shows where every mark went. Naming the single move is the student&#8217;s job.</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">slide, turn, flip.</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://tracing.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open transformaSHion"></a><div class="spec-body"><span class="sp-k">steps, in the student&#8217;s words</span><ol class="sp-steps"><li><b>slide</b> right 3, down 2</li><li><b>turn</b> 90&deg; about (0, 0)</li><li><b>flip</b> over <i>y</i> = <i>x</i></li></ol><span class="sp-sub">The tool shows where every mark went. Naming the single move is the student&#8217;s job.</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">slide, turn, flip.</span></figcaption></figure>
             <div class="head"><span class="n">7.</span><h3><a href="https://tracing.lefthanddev.com/">transforma<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">Tracing paper over a coordinate grid.</strong> Plot a figure, lay the paper down, then slide it, turn it about a center you pick, or flip it over a mirror line.</p>
             <span class="given"><b>Given:</b> vanilla JS, no dependencies</span>
@@ -489,7 +492,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="class">
-            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">each student lands in one</span><ul class="sp-sort"><li>can&#8217;t start</li><li>won&#8217;t start</li><li>doesn&#8217;t know enough <em>yet</em></li></ul><span class="sp-sub sp-flag">also flags: rushing &middot; not reading</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">can&#8217;t, won&#8217;t, or not yet?</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://tenshion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open tenSHion"></a><div class="spec-body sp-dark"><span class="sp-k">each student lands in one</span><ul class="sp-sort"><li>can&#8217;t start</li><li>won&#8217;t start</li><li>doesn&#8217;t know enough <em>yet</em></li></ul><span class="sp-sub sp-flag">also flags: rushing &middot; not reading</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">can&#8217;t, won&#8217;t, or not yet?</span></figcaption></figure>
             <div class="head"><span class="n">8.</span><h3><a href="https://tenshion.lefthanddev.com/">ten<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">Alleviate the tension between students and teachers.</strong> A forward-only set of math and reasoning problems that shows whether a student can&#8217;t start, won&#8217;t start, or doesn&#8217;t know enough yet.</p>
             <span class="given"><b>Given:</b> HTML, CSS, JS &middot; no server</span>
@@ -497,7 +500,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print spec"><div class="spec-body"><span class="sp-k">type it, then copy it out</span><span class="sp-math"><i>x</i> = <span class="frac"><span>&minus;<i>b</i> &plusmn; &radic;<span class="ov"><i>b</i><sup>2</sup> &minus; 4<i>ac</i></span></span><span>2<i>a</i></span></span></span><span class="sp-chips"><span>LaTeX</span><span>MathML</span><span>OMML</span><span>SVG</span></span></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://equashion.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open equaSHion"></a><div class="spec-body"><span class="sp-k">type it, then copy it out</span><span class="sp-math"><i>x</i> = <span class="frac"><span>&minus;<i>b</i> &plusmn; &radic;<span class="ov"><i>b</i><sup>2</sup> &minus; 4<i>ac</i></span></span><span>2<i>a</i></span></span></span><span class="sp-chips"><span>LaTeX</span><span>MathML</span><span>OMML</span><span>SVG</span></span></div><figcaption class="strip"><span class="stamp live">Live</span></figcaption></figure>
             <div class="head"><span class="n">9.</span><h3><a href="https://equashion.lefthanddev.com/">equa<span class="sh">SH</span>ion</a></h3></div>
             <p><strong class="lead">An equation editor in pure Rust.</strong> Type it naturally, then copy it out as LaTeX, MathML, Word's OMML or SVG.</p>
             <span class="given"><b>Given:</b> Rust, wasm, WebGL2</span>
@@ -505,7 +508,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print spec"><div class="spec-body"><span class="sp-k">one window, four apps</span><span class="sp-tabs"><span><b>WordCraft</b>.docx</span><span><b>GridCraft</b>.xlsx</span><span><b>DeckCraft</b>.pptx</span><span><b>PdfCraft</b>.pdf</span></span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://officecraft.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open OfficeCraft"></a><div class="spec-body"><span class="sp-k">one window, four apps</span><span class="sp-tabs"><span><b>WordCraft</b>.docx</span><span><b>GridCraft</b>.xlsx</span><span><b>DeckCraft</b>.pptx</span><span><b>PdfCraft</b>.pdf</span></span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">docs, sheets, slides, PDF.</span></figcaption></figure>
             <div class="head"><span class="n">10.</span><h3><a href="https://officecraft.lefthanddev.com/">OfficeCraft</a></h3></div>
             <p><strong class="lead">Documents, spreadsheets, slides and PDFs as tabs in one window.</strong> Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.</p>
             <span class="given"><b>Given:</b> Rust, egui, wgpu</span>
@@ -513,7 +516,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="lab">
-            <figure class="print spec"><div class="spec-body"><span class="sp-k">field result &middot; top match</span><span class="sp-q"><i>Eschscholzia californica</i></span><span class="sp-sub">Californian poppy</span><span class="sp-big sp-pct">99.98%</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">point. shoot. botany.</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://leaf.lefthanddev.com/" tabindex="-1" aria-hidden="true" title="Open L.E.A.F"></a><div class="spec-body"><span class="sp-k">field result &middot; top match</span><span class="sp-q"><i>Eschscholzia californica</i></span><span class="sp-sub">Californian poppy</span><span class="sp-big sp-pct">99.98%</span></div><figcaption class="strip"><span class="stamp live">Live</span><span class="note" aria-hidden="true">point. shoot. botany.</span></figcaption></figure>
             <div class="head"><span class="n">11.</span><h3><a href="https://leaf.lefthanddev.com/">L.E.A.F</a></h3></div>
             <p><strong class="lead">Plant ID that runs on your own server or right in the browser.</strong> Seven real models get compared head to head, and the README says plainly that 16 photos are a smoke test.</p>
             <span class="given"><b>Given:</b> FastAPI, BioCLIP, Docker</span>
@@ -521,7 +524,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">Lincoln POWER MIG 210 MP &middot; MIG, mild steel</span><span class="sp-gauges"><span><b>33</b> of 100<em>wire speed</em></span><span><b>21.5</b> V<em>voltage</em></span><span><b>125</b> A<em>at the arc</em></span></span></div><figcaption class="strip"><span class="stamp draft">Draft</span><span class="note" aria-hidden="true">the knob says 1&ndash;10.</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://slagweld.pages.dev/" tabindex="-1" aria-hidden="true" title="Open SLAG"></a><div class="spec-body sp-dark"><span class="sp-k">Lincoln POWER MIG 210 MP &middot; MIG, mild steel</span><span class="sp-gauges"><span><b>33</b> of 100<em>wire speed</em></span><span><b>21.5</b> V<em>voltage</em></span><span><b>125</b> A<em>at the arc</em></span></span></div><figcaption class="strip"><span class="stamp draft">Draft</span><span class="note" aria-hidden="true">the knob says 1&ndash;10.</span></figcaption></figure>
             <div class="head"><span class="n">12.</span><h3><a href="https://slagweld.pages.dev/">SLAG</a></h3></div>
             <p><strong class="lead">Weld settings for the machine in front of you.</strong> Pick the process, metal and thickness, and it turns the chart's targets into the number you actually dial in.</p>
             <span class="given"><b>Given:</b> React, Vite, D1</span>
@@ -529,7 +532,7 @@
           </article>
 
           <article class="prob s3 reveal" data-cat="make">
-            <figure class="print spec"><div class="spec-body sp-dark"><span class="sp-k">ready to analyze</span><span class="sp-q">Upload a photo or a short clip of the weld.</span><span class="sp-chips"><span>MIG</span><span>TIG</span><span>Stick</span><span>Flux Core</span></span></div><figcaption class="strip"><span class="stamp draft">Draft</span></figcaption></figure>
+            <figure class="print spec"><a class="card-link" href="https://11gauge.pages.dev/" tabindex="-1" aria-hidden="true" title="Open 11Gauge"></a><div class="spec-body sp-dark"><span class="sp-k">ready to analyze</span><span class="sp-q">Upload a photo or a short clip of the weld.</span><span class="sp-chips"><span>MIG</span><span>TIG</span><span>Stick</span><span>Flux Core</span></span></div><figcaption class="strip"><span class="stamp draft">Draft</span></figcaption></figure>
             <div class="head"><span class="n">13.</span><h3><a href="https://11gauge.pages.dev/">11Gauge</a></h3></div>
             <p><strong class="lead">Grades welds, not people.</strong> Upload a photo or a short clip, describe the joint and position, and get a written report back from a vision model.</p>
             <span class="given"><b>Given:</b> Qwen3-VL, Ollama</span>
