@@ -9,6 +9,14 @@
   <meta property="og:title" content="Left Hand Dev">
   <meta property="og:description" content="Twenty problems, solved with the other hand. Classroom tools for math, statistics and CS, and a few things for the shop.">
   <meta property="og:type" content="website">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('lhd-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     /* Self-hosted fonts. Bricolage Grotesque, JetBrains Mono and Caveat are all SIL OFL. */
@@ -37,22 +45,21 @@
       --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
       --sans: "Bricolage", ui-sans-serif, system-ui, sans-serif;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
+    :root[data-theme="dark"] {
         --paper: #1b1e23;
-        --grid: rgba(120, 170, 230, 0.07);
-        --grid-major: rgba(120, 170, 230, 0.14);
-        --ink: #e8eaee;
-        --ink-soft: #c3c8d0;
-        --red: #ff8466;
-        --tape: #c9bd8a;
-        --card: #272b32;
-        --frame: #d3d6db;
-        --frame-edge: rgba(0, 0, 0, 0.5);
-        --hole: #0d0f12;
-        --coil: #5f676d;
-        --shadow: 0 1px 0 rgba(255,255,255,0.03), 0 18px 34px -20px rgba(0, 0, 0, 0.9);
-      }
+      --grid: rgba(120, 170, 230, 0.07);
+      --grid-major: rgba(120, 170, 230, 0.14);
+      --ink: #e8eaee;
+      --ink-soft: #c3c8d0;
+      --red: #ff8466;
+      --tape: #c9bd8a;
+      --card: #272b32;
+      --frame: #d3d6db;
+      --frame-edge: rgba(0, 0, 0, 0.5);
+      --hole: #0d0f12;
+      --coil: #5f676d;
+      --shadow: 0 1px 0 rgba(255,255,255,0.03), 0 18px 34px -20px rgba(0, 0, 0, 0.9);
+      color-scheme: dark;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -90,7 +97,7 @@
         position: fixed; top: 0; bottom: 0; right: 0; width: 72px; z-index: 2; pointer-events: none;
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='30' viewBox='0 0 72 30'%3E %3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='.45' stop-color='%23b9c0c6'/%3E%3Cstop offset='1' stop-color='%235d656c'/%3E%3C/linearGradient%3E%3C/defs%3E %3Crect x='52' y='0' width='20' height='30' fill='%233b403c'/%3E %3Cpath d='M54 8 C 66 6, 70 14, 66 21' fill='none' stroke='%234a5157' stroke-width='2.4' stroke-linecap='round'/%3E %3Cellipse cx='24' cy='16' rx='4.6' ry='4.2' fill='%232c312d'/%3E %3Cpath d='M24 17.5 C 28 7, 46 3, 60 6.5 C 69 9, 69 18, 60 20' fill='none' stroke='rgba(20,30,25,.22)' stroke-width='3.2' stroke-linecap='round' transform='translate(0.8 1.6)'/%3E %3Cpath d='M24 15 C 28 5, 46 1, 60 4.5 C 69 7, 69 16, 60 18.5' fill='none' stroke='url(%23g)' stroke-width='3' stroke-linecap='round'/%3E %3C/svg%3E") 0 0 / 72px 30px repeat-y;
       }
-      @media (prefers-color-scheme: dark) { .binding { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='30' viewBox='0 0 72 30'%3E %3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e9edf0'/%3E%3Cstop offset='.45' stop-color='%239aa2a9'/%3E%3Cstop offset='1' stop-color='%234b5258'/%3E%3C/linearGradient%3E%3C/defs%3E %3Crect x='52' y='0' width='20' height='30' fill='%23070a08'/%3E %3Cpath d='M54 8 C 66 6, 70 14, 66 21' fill='none' stroke='%233a4046' stroke-width='2.4' stroke-linecap='round'/%3E %3Cellipse cx='24' cy='16' rx='4.6' ry='4.2' fill='%23050706'/%3E %3Cpath d='M24 17.5 C 28 7, 46 3, 60 6.5 C 69 9, 69 18, 60 20' fill='none' stroke='rgba(0,0,0,.55)' stroke-width='3.2' stroke-linecap='round' transform='translate(0.8 1.6)'/%3E %3Cpath d='M24 15 C 28 5, 46 1, 60 4.5 C 69 7, 69 16, 60 18.5' fill='none' stroke='url(%23g)' stroke-width='3' stroke-linecap='round'/%3E %3C/svg%3E"); } }
+      :root[data-theme="dark"] .binding { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='30' viewBox='0 0 72 30'%3E %3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e9edf0'/%3E%3Cstop offset='.45' stop-color='%239aa2a9'/%3E%3Cstop offset='1' stop-color='%234b5258'/%3E%3C/linearGradient%3E%3C/defs%3E %3Crect x='52' y='0' width='20' height='30' fill='%23070a08'/%3E %3Cpath d='M54 8 C 66 6, 70 14, 66 21' fill='none' stroke='%233a4046' stroke-width='2.4' stroke-linecap='round'/%3E %3Cellipse cx='24' cy='16' rx='4.6' ry='4.2' fill='%23050706'/%3E %3Cpath d='M24 17.5 C 28 7, 46 3, 60 6.5 C 69 9, 69 18, 60 20' fill='none' stroke='rgba(0,0,0,.55)' stroke-width='3.2' stroke-linecap='round' transform='translate(0.8 1.6)'/%3E %3Cpath d='M24 15 C 28 5, 46 1, 60 4.5 C 69 7, 69 16, 60 18.5' fill='none' stroke='url(%23g)' stroke-width='3' stroke-linecap='round'/%3E %3C/svg%3E"); }
     }
     .page { position: relative; z-index: 3; max-width: calc(1240px + var(--binding)); margin: 0 auto; padding: 0 calc(1.25rem + var(--binding)) 0 1.25rem; }
     @media (min-width: 900px) { .page { padding-left: 2.5rem; } }
@@ -108,6 +115,11 @@
     .sheet-head nav a:hover { color: var(--red); }
     @media (max-width: 720px) { .sheet-head .field.optional { display: none; } .sheet-head { gap: 1rem; } .sheet-head nav { gap: 1rem; font-size: 0.82rem; } }
     .sheet-head nav a { white-space: nowrap; }
+    .sheet-head nav { align-items: baseline; }
+    .theme-toggle { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 1.5px solid var(--ink); border-radius: 999px; padding: 0.2rem 0.65rem 0.2rem 0.45rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+    .theme-toggle:hover { color: var(--red); border-color: var(--red); }
+    @media (max-width: 720px) { .theme-toggle { padding: 0.3rem; } .tt-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } }
+    .tt-ink { width: 0.8rem; height: 0.8rem; border-radius: 50%; border: 1.5px solid currentColor; background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
 
     /* Hero */
     .hero { display: grid; grid-template-columns: 1fr; gap: 3rem; padding: 3rem 0 4rem; }
@@ -145,7 +157,7 @@
     /* Spec cards: one real, readable detail per project, set as type on paper */
     .spec-body { container-type: inline-size; aspect-ratio: 16 / 10; background: #fbfaf3; color: #17201b; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 1.6rem 1.4rem 1rem; overflow: hidden;
       background-image: linear-gradient(rgba(74,134,204,.16) 1px, transparent 1px); background-size: 100% 1.6rem; }
-    @media (prefers-color-scheme: dark) { .spec-body { background-color: #dde0e4; } }
+    :root[data-theme="dark"] .spec-body { background-color: #dde0e4; }
     .spec-body.sp-dark { background: #22262c; color: #eef2ec; background-image: none; }
     .sp-k { font-family: var(--mono); font-size: max(0.72rem, 3.6cqi); color: #6a5a4a; text-transform: uppercase; letter-spacing: 0.06em; }
     .sp-dark .sp-k { color: #a9b6ad; }
@@ -186,7 +198,7 @@
     .sp-flag { color: #a9b6ad; font-family: var(--mono); font-size: max(0.8rem, 3.7cqi); }
     .spec { background: var(--frame); }
     .print picture { display: block; }
-    @media (prefers-color-scheme: dark) { .prob .print img { filter: brightness(0.9); } }
+    :root[data-theme="dark"] .prob .print img { filter: brightness(0.9); }
     .print img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
     .stack .print figcaption { position: absolute; top: -12px; left: 50%; translate: -50% 0; rotate: -3deg; font-family: var(--hand); font-size: 1.2rem; font-weight: 700; color: #3a3424; line-height: 28px; white-space: nowrap; }
     .print::before {
@@ -282,7 +294,7 @@
     .prob .n { font-family: var(--mono); font-size: 0.9rem; color: var(--ink-soft); min-width: 2.4ch; }
     .prob h3 { margin: 0; font-size: clamp(1.9rem, 3vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.05; font-weight: 750; font-stretch: 94%; }
     .prob h3 a { text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 6px; background-image: linear-gradient(transparent 58%, color-mix(in srgb, #f3d34a 70%, transparent) 58%, color-mix(in srgb, #f3d34a 70%, transparent) 92%, transparent 92%); background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .45s cubic-bezier(.6,.05,.3,1); }
-    @media (prefers-color-scheme: dark) { .prob h3 a { background-image: linear-gradient(transparent 58%, rgba(255,132,102,.32) 58%, rgba(255,132,102,.32) 92%, transparent 92%); } }
+    :root[data-theme="dark"] .prob h3 a { background-image: linear-gradient(transparent 58%, rgba(255,132,102,.32) 58%, rgba(255,132,102,.32) 92%, transparent 92%); }
     .prob:hover h3 a, .prob h3 a:focus-visible { background-size: 100% 100%; }
     .prob p { margin: 0; color: var(--ink-soft); max-width: 50ch; }
     .prob .lead { color: var(--ink); font-weight: 650; }
@@ -382,6 +394,7 @@
       <nav aria-label="Primary">
         <a href="#problems">Projects</a>
         <a href="#key">About</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode"><span class="tt-ink" aria-hidden="true"></span><span class="tt-label">Dark</span></button>
       </nav>
     </header>
 
@@ -586,6 +599,13 @@
         items.forEach(el => { el.hidden = f !== 'all' && el.dataset.cat !== f; if (!el.hidden) el.classList.add('in'); });
       }));
 
+      // Light / dark toggle: remembers the choice; otherwise follows the system.
+      const tb = document.getElementById('theme-toggle'), root = document.documentElement;
+      const paint = () => { const d = root.dataset.theme === 'dark'; tb.querySelector('.tt-label').textContent = d ? 'Light' : 'Dark'; tb.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode'); };
+      paint();
+      tb.addEventListener('click', () => { const t = root.dataset.theme === 'dark' ? 'light' : 'dark'; root.dataset.theme = t; try { localStorage.setItem('lhd-theme', t); } catch (e) {} paint(); });
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { let saved = null; try { saved = localStorage.getItem('lhd-theme'); } catch (_) {} if (!saved) { root.dataset.theme = e.matches ? 'dark' : 'light'; paint(); } });
+
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // Written in as you scroll.
@@ -602,7 +622,7 @@
       const dpr = Math.min(devicePixelRatio || 1, 2);
       const size = () => { c.width = innerWidth * dpr; c.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
       size(); addEventListener('resize', size);
-      const dark = matchMedia('(prefers-color-scheme: dark)');
+      const dark = { get matches() { return document.documentElement.dataset.theme === 'dark'; } };
       let pts = [], raf = 0;
       addEventListener('pointermove', e => { pts.push({ x: e.clientX, y: e.clientY, t: performance.now() }); if (!raf) raf = requestAnimationFrame(tick); }, { passive: true });
       function tick() {

@@ -1,0 +1,485 @@
+- generic [active] [ref=e1]:
+  - link "Skip to the problems" [ref=e2] [cursor=pointer]:
+    - /url: "#problems"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - text: "Name:"
+        - link "Left Hand Dev" [ref=e7] [cursor=pointer]:
+          - /url: /
+      - navigation "Primary" [ref=e8]:
+        - link "Projects" [ref=e9] [cursor=pointer]:
+          - /url: "#problems"
+        - link "About" [ref=e10] [cursor=pointer]:
+          - /url: "#key"
+        - button "Switch to dark mode" [ref=e11] [cursor=pointer]:
+          - generic [ref=e13]: Dark
+    - main [ref=e14]:
+      - region [ref=e15]:
+        - generic [ref=e16]:
+          - heading [level=1] [ref=e17]:
+            - text: Software written with the
+            - generic [ref=e18]: other
+            - text: hand.
+          - paragraph [ref=e19]: Classroom tools from a math teacher, built to bridge abstract mathematics and student intuition.
+          - generic [ref=e20]:
+            - link "Browse the 20 projects" [ref=e21] [cursor=pointer]:
+              - /url: "#problems"
+              - text: Browse the 20 projects
+              - generic [aria-hidden] [ref=e22]: ↓
+            - link "Who is writing this?" [ref=e23] [cursor=pointer]:
+              - /url: "#key"
+        - figure "rāSHio" [ref=e25]:
+          - img "rāSHio drawing a histogram and box plot of sample ages." [ref=e26]
+        - paragraph [ref=e28]: rāSHio drawing a histogram and box plot, live in the browser.
+      - region [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - heading "The problem set" [level=2] [ref=e33]
+              - generic [aria-hidden] [ref=e34]: "due: whenever it's ready"
+            - paragraph [ref=e35]: "Each one started as a real problem in a real room: a stats class, a CS lab, a weld shop. Most open in the browser with no account and nothing to install."
+          - group "Filter problems" [ref=e36]:
+            - button "All 20" [pressed] [ref=e37] [cursor=pointer]
+            - button "The classroom" [ref=e38] [cursor=pointer]
+            - button "Math & making" [ref=e39] [cursor=pointer]
+            - button "Home lab" [ref=e40] [cursor=pointer]
+        - generic [ref=e41]:
+          - article [ref=e42]:
+            - figure "Live" [ref=e43]:
+              - 'img "rāSHio''s preview app: a histogram and box plot of sample ages with min, quartiles, median and max." [ref=e44]'
+              - generic [ref=e45]:
+                - generic [ref=e46]: Live
+                - generic [aria-hidden] [ref=e47]: "say it: ray-she-oh"
+            - generic [ref=e48]:
+              - generic [ref=e49]: "1."
+              - heading [level=3] [ref=e50]:
+                - link "rāSHio" [ref=e51] [cursor=pointer]:
+                  - /url: https://rashio.app/
+            - paragraph [ref=e52]:
+              - strong [ref=e53]: A statistics calculator for the intro course, built to replace the StatCrunch and TI-84 shuffle.
+              - text: A spreadsheet up front, then t-tests, ANOVA, chi-square and probability shading, and every chart redraws as the data changes. The data never leaves the student's machine.
+            - generic [ref=e54]: "Given: browser, D3, Cloudflare D1"
+            - link "Open it →" [ref=e56] [cursor=pointer]:
+              - /url: https://rashio.app/
+          - article [ref=e57]:
+            - figure "Live" [ref=e58]:
+              - generic [ref=e59]:
+                - generic [ref=e60]: open textbooks, rewritten
+                - generic [ref=e61]: 180+
+                - generic [ref=e62]: sections to read
+                - list [ref=e63]:
+                  - listitem [ref=e64]: — Integrated Math 1
+                  - listitem [ref=e65]: — Introduction to Statistics
+                  - listitem [ref=e66]: — Calculus Volume 1
+            - generic [ref=e69]:
+              - generic [ref=e70]: "2."
+              - heading [level=3] [ref=e71]:
+                - link "bookSHelf" [ref=e72] [cursor=pointer]:
+                  - /url: https://oerbookshelf.app/
+            - paragraph [ref=e73]:
+              - strong [ref=e74]: "Open textbooks, rewritten for the student who actually reads them:"
+              - text: plain-English explanations, worked examples, collapsible solutions. An 11‑step pipeline produces every page.
+            - generic [ref=e75]: "Given: 180+ sections, MathJax"
+            - link "Open it →" [ref=e77] [cursor=pointer]:
+              - /url: https://oerbookshelf.app/
+          - article [ref=e78]:
+            - figure "Live" [ref=e79]:
+              - generic [ref=e80]:
+                - generic [ref=e81]:
+                  - text: Linear Equations Quiz ·
+                  - emphasis [ref=e82]: Version A
+                - generic [ref=e83]: "1. Solve for x: 3x + 5 = 20"
+                - generic [ref=e84]:
+                  - generic [ref=e85]: (A) 3
+                  - generic [ref=e86]: ·(B) 5
+                  - generic [ref=e87]: ·(C) 15
+                  - generic [ref=e88]: ·(D) 25
+              - generic [ref=e89]:
+                - generic [ref=e90]: Live
+                - generic [aria-hidden] [ref=e91]: version A, version B.
+            - generic [ref=e92]:
+              - generic [ref=e93]: "3."
+              - heading [level=3] [ref=e94]:
+                - link "verSHion" [ref=e95] [cursor=pointer]:
+                  - /url: https://vershion.lefthanddev.com/
+            - paragraph [ref=e96]:
+              - strong [ref=e97]: Question banks in, printed tests out.
+              - text: Old PDFs, scans, screenshots and Word docs become clean exams with shuffled versions and an answer key.
+            - generic [ref=e98]: "Given: Rust, egui, WebAssembly"
+            - generic [ref=e99]:
+              - link "Open it →" [ref=e100] [cursor=pointer]:
+                - /url: https://vershion.lefthanddev.com/
+              - link "Source" [ref=e101] [cursor=pointer]:
+                - /url: https://github.com/shuff57/verSHion
+          - article [ref=e102]:
+            - figure "Live" [ref=e103]:
+              - generic [ref=e104]:
+                - generic [ref=e105]: Chapter 1 · JavaScript Fundamentals
+                - list [ref=e106]:
+                  - listitem [ref=e107]: 1.1 Software Lifecycle
+                  - listitem [ref=e108]: 1.2 Variables and Data Types
+                  - listitem [ref=e109]: 1.3 Documentation and Coding Conventions
+              - generic [ref=e110]:
+                - generic [ref=e111]: Live
+                - generic [aria-hidden] [ref=e112]: the course I actually teach
+            - generic [ref=e113]:
+              - generic [ref=e114]: "4."
+              - heading [level=3] [ref=e115]:
+                - link "shCode" [ref=e116] [cursor=pointer]:
+                  - /url: https://shcode.pages.dev/
+            - paragraph [ref=e117]:
+              - strong [ref=e118]: "A whole classroom platform for high school JavaScript:"
+              - text: lessons, an in-browser editor with live autograding, join codes and per-student progress for the teacher.
+            - generic [ref=e119]: "Given: Next.js, CodeMirror, D1"
+            - generic [ref=e120]:
+              - link "Open it →" [ref=e121] [cursor=pointer]:
+                - /url: https://shcode.pages.dev/
+              - link "Source" [ref=e122] [cursor=pointer]:
+                - /url: https://github.com/shuff57/shCode
+          - article [ref=e123]:
+            - figure "Live" [ref=e124]:
+              - generic [ref=e125]:
+                - generic [ref=e126]: Course syllabus · section 4
+                - generic [ref=e127]: Late work
+                - generic [ref=e128]: Parent or guardian, initial to show you read this section.
+                - generic [ref=e129]:
+                  - generic [ref=e130]: S.H.
+                  - text: initialed
+              - generic [ref=e131]:
+                - generic [ref=e132]: Live
+                - generic [aria-hidden] [ref=e133]: no backpack required.
+            - generic [ref=e134]:
+              - generic [ref=e135]: "5."
+              - heading [level=3] [ref=e136]:
+                - link "iniSHial" [ref=e137] [cursor=pointer]:
+                  - /url: https://inishial.pages.dev/
+            - paragraph [ref=e138]:
+              - strong [ref=e139]: A living syllabus that parents initial section by section,
+              - text: so a signature means they read the late-work policy.
+            - generic [ref=e140]: "Given: vanilla JS, no build"
+            - generic [ref=e141]:
+              - link "Open it →" [ref=e142] [cursor=pointer]:
+                - /url: https://inishial.pages.dev/
+              - link "Source" [ref=e143] [cursor=pointer]:
+                - /url: https://github.com/shuff57/inishial
+          - article [ref=e144]:
+            - figure "Live" [ref=e145]:
+              - generic [ref=e146]:
+                - generic [ref=e147]: the whole engine, as globals
+                - generic [ref=e148]: setup() draw()
+                - generic [ref=e149]:
+                  - generic [ref=e150]: Sprite
+                  - generic [ref=e151]: ·Group
+                  - generic [ref=e152]: ·world
+                  - generic [ref=e153]: ·camera
+                  - generic [ref=e154]: ·kb
+                  - generic [ref=e155]: ·mouse
+            - generic [ref=e158]:
+              - generic [ref=e159]: "6."
+              - heading [level=3] [ref=e160]:
+                - link "moSHion" [ref=e161] [cursor=pointer]:
+                  - /url: https://shuff57.github.io/moshion/
+            - paragraph [ref=e162]:
+              - strong [ref=e163]: "A 2D game engine for beginners:"
+              - text: sprites and real Box2D physics in a handful of globals. Write setup() and draw(), and the engine runs them.
+            - generic [ref=e164]: "Given: planck.js, zero imports"
+            - generic [ref=e165]:
+              - link "Open it →" [ref=e166] [cursor=pointer]:
+                - /url: https://shuff57.github.io/moshion/
+              - link "Source" [ref=e167] [cursor=pointer]:
+                - /url: https://github.com/shuff57/moshion
+          - article [ref=e168]:
+            - figure "Live" [ref=e169]:
+              - generic [ref=e170]:
+                - generic [ref=e171]: steps, in the student’s words
+                - list [ref=e172]:
+                  - listitem [ref=e173]: slide right 3, down 2
+                  - listitem [ref=e174]: turn 90° about (0, 0)
+                  - listitem [ref=e175]: flip over y = x
+                - generic [ref=e176]: The tool shows where every mark went. Naming the single move is the student’s job.
+              - generic [ref=e177]:
+                - generic [ref=e178]: Live
+                - generic [aria-hidden] [ref=e179]: slide, turn, flip.
+            - generic [ref=e180]:
+              - generic [ref=e181]: "7."
+              - heading [level=3] [ref=e182]:
+                - link "transformaSHion" [ref=e183] [cursor=pointer]:
+                  - /url: https://tracing.lefthanddev.com/
+            - paragraph [ref=e184]:
+              - strong [ref=e185]: Tracing paper over a coordinate grid.
+              - text: Plot a figure, lay the paper down, then slide it, turn it about a center you pick, or flip it over a mirror line.
+            - generic [ref=e186]: "Given: vanilla JS, no dependencies"
+            - generic [ref=e187]:
+              - link "Open it →" [ref=e188] [cursor=pointer]:
+                - /url: https://tracing.lefthanddev.com/
+              - link "Source" [ref=e189] [cursor=pointer]:
+                - /url: https://github.com/shuff57/transformaSHion
+          - article [ref=e190]:
+            - figure "Live" [ref=e191]:
+              - generic [ref=e192]:
+                - generic [ref=e193]: each student lands in one
+                - list [ref=e194]:
+                  - listitem [ref=e195]: ▢ can’t start
+                  - listitem [ref=e196]: ▢ won’t start
+                  - listitem [ref=e197]:
+                    - text: ▢ doesn’t know enough
+                    - emphasis [ref=e198]: yet
+                - generic [ref=e199]: "also flags: rushing · not reading"
+              - generic [ref=e200]:
+                - generic [ref=e201]: Live
+                - generic [aria-hidden] [ref=e202]: can’t, won’t, or not yet?
+            - generic [ref=e203]:
+              - generic [ref=e204]: "8."
+              - heading [level=3] [ref=e205]:
+                - link "tenSHion" [ref=e206] [cursor=pointer]:
+                  - /url: https://tenshion.lefthanddev.com/
+            - paragraph [ref=e207]:
+              - strong [ref=e208]: Alleviate the tension between students and teachers.
+              - text: A forward-only set of math and reasoning problems that shows whether a student can’t start, won’t start, or doesn’t know enough yet.
+            - generic [ref=e209]: "Given: HTML, CSS, JS · no server"
+            - generic [ref=e210]:
+              - link "Open it →" [ref=e211] [cursor=pointer]:
+                - /url: https://tenshion.lefthanddev.com/
+              - link "Source" [ref=e212] [cursor=pointer]:
+                - /url: https://github.com/shuff57/tenshion
+          - article [ref=e213]:
+            - figure "Live" [ref=e214]:
+              - generic [ref=e215]:
+                - generic [ref=e216]: type it, then copy it out
+                - generic [ref=e217]:
+                  - generic [ref=e218]: x
+                  - text: =
+                  - generic [ref=e219]:
+                    - generic [ref=e220]:
+                      - text: −b ± √
+                      - generic [ref=e221]:
+                        - text: b
+                        - superscript [ref=e222]: "2"
+                        - text: − 4ac
+                    - generic [ref=e223]: 2a
+                - generic [ref=e224]:
+                  - generic [ref=e225]: LaTeX
+                  - generic [ref=e226]: ·MathML
+                  - generic [ref=e227]: ·OMML
+                  - generic [ref=e228]: ·SVG
+            - generic [ref=e231]:
+              - generic [ref=e232]: "9."
+              - heading [level=3] [ref=e233]:
+                - link "equaSHion" [ref=e234] [cursor=pointer]:
+                  - /url: https://equashion.lefthanddev.com/
+            - paragraph [ref=e235]:
+              - strong [ref=e236]: An equation editor in pure Rust.
+              - text: Type it naturally, then copy it out as LaTeX, MathML, Word's OMML or SVG.
+            - generic [ref=e237]: "Given: Rust, wasm, WebGL2"
+            - generic [ref=e238]:
+              - link "Open it →" [ref=e239] [cursor=pointer]:
+                - /url: https://equashion.lefthanddev.com/
+              - link "Source" [ref=e240] [cursor=pointer]:
+                - /url: https://github.com/shuff57/equaSHion
+          - article [ref=e241]:
+            - figure "Live" [ref=e242]:
+              - generic [ref=e243]:
+                - generic [ref=e244]: one window, four apps
+                - generic [ref=e245]:
+                  - generic [ref=e246]:
+                    - generic [ref=e247]: WordCraft
+                    - text: .docx
+                  - generic [ref=e248]:
+                    - generic [ref=e249]: GridCraft
+                    - text: .xlsx
+                  - generic [ref=e250]:
+                    - generic [ref=e251]: DeckCraft
+                    - text: .pptx
+                  - generic [ref=e252]:
+                    - generic [ref=e253]: PdfCraft
+                    - text: .pdf
+              - generic [ref=e254]:
+                - generic [ref=e255]: Live
+                - generic [aria-hidden] [ref=e256]: docs, sheets, slides, PDF.
+            - generic [ref=e257]:
+              - generic [ref=e258]: "10."
+              - heading [level=3] [ref=e259]:
+                - link "OfficeCraft" [ref=e260] [cursor=pointer]:
+                  - /url: https://officecraft.lefthanddev.com/
+            - paragraph [ref=e261]:
+              - strong [ref=e262]: Documents, spreadsheets, slides and PDFs as tabs in one window.
+              - text: Opens .docx, .xlsx and .pptx, with equaSHion and verSHion built in. Every app is written in Rust.
+            - generic [ref=e263]: "Given: Rust, egui, wgpu"
+            - generic [ref=e264]:
+              - link "Open it →" [ref=e265] [cursor=pointer]:
+                - /url: https://officecraft.lefthanddev.com/
+              - link "Source" [ref=e266] [cursor=pointer]:
+                - /url: https://github.com/shuff57/officecraft
+          - article [ref=e267]:
+            - figure "Live" [ref=e268]:
+              - generic [ref=e269]:
+                - generic [ref=e270]: field result · top match
+                - generic [ref=e271]: Eschscholzia californica
+                - generic [ref=e272]: Californian poppy
+                - generic [ref=e273]: 99.98%
+              - generic [ref=e274]:
+                - generic [ref=e275]: Live
+                - generic [aria-hidden] [ref=e276]: point. shoot. botany.
+            - generic [ref=e277]:
+              - generic [ref=e278]: "11."
+              - heading [level=3] [ref=e279]:
+                - link "L.E.A.F" [ref=e280] [cursor=pointer]:
+                  - /url: https://leaf.lefthanddev.com/
+            - paragraph [ref=e281]:
+              - strong [ref=e282]: Plant ID that runs on your own server or right in the browser.
+              - text: Seven real models get compared head to head, and the README says plainly that 16 photos are a smoke test.
+            - generic [ref=e283]: "Given: FastAPI, BioCLIP, Docker"
+            - generic [ref=e284]:
+              - link "Open it →" [ref=e285] [cursor=pointer]:
+                - /url: https://leaf.lefthanddev.com/
+              - link "Source" [ref=e286] [cursor=pointer]:
+                - /url: https://github.com/shuff57/LEAF
+          - article [ref=e287]:
+            - figure "Draft" [ref=e288]:
+              - generic [ref=e289]:
+                - generic [ref=e290]: Lincoln POWER MIG 210 MP · MIG, mild steel
+                - generic [ref=e291]:
+                  - generic [ref=e292]:
+                    - generic [ref=e293]: "33"
+                    - text: of 100
+                    - emphasis [ref=e294]: wire speed
+                  - generic [ref=e295]:
+                    - generic [ref=e296]: "21.5"
+                    - text: V
+                    - emphasis [ref=e297]: voltage
+                  - generic [ref=e298]:
+                    - generic [ref=e299]: "125"
+                    - text: A
+                    - emphasis [ref=e300]: at the arc
+              - generic [ref=e301]:
+                - generic [ref=e302]: Draft
+                - generic [aria-hidden] [ref=e303]: the knob says 1–10.
+            - generic [ref=e304]:
+              - generic [ref=e305]: "12."
+              - heading [level=3] [ref=e306]:
+                - link "SLAG" [ref=e307] [cursor=pointer]:
+                  - /url: https://slagweld.pages.dev/
+            - paragraph [ref=e308]:
+              - strong [ref=e309]: Weld settings for the machine in front of you.
+              - text: Pick the process, metal and thickness, and it turns the chart's targets into the number you actually dial in.
+            - generic [ref=e310]: "Given: React, Vite, D1"
+            - generic [ref=e311]:
+              - link "Open it →" [ref=e312] [cursor=pointer]:
+                - /url: https://slagweld.pages.dev/
+              - link "Source" [ref=e313] [cursor=pointer]:
+                - /url: https://github.com/shuff57/slag
+          - article [ref=e314]:
+            - figure "Draft" [ref=e315]:
+              - generic [ref=e316]:
+                - generic [ref=e317]: ready to analyze
+                - generic [ref=e318]: Upload a photo or a short clip of the weld.
+                - generic [ref=e319]:
+                  - generic [ref=e320]: MIG
+                  - generic [ref=e321]: ·TIG
+                  - generic [ref=e322]: ·Stick
+                  - generic [ref=e323]: ·Flux Core
+            - generic [ref=e326]:
+              - generic [ref=e327]: "13."
+              - heading [level=3] [ref=e328]:
+                - link "11Gauge" [ref=e329] [cursor=pointer]:
+                  - /url: https://11gauge.pages.dev/
+            - paragraph [ref=e330]:
+              - strong [ref=e331]: Grades welds, not people.
+              - text: Upload a photo or a short clip, describe the joint and position, and get a written report back from a vision model.
+            - generic [ref=e332]: "Given: Qwen3-VL, Ollama"
+            - generic [ref=e333]:
+              - link "Open it →" [ref=e334] [cursor=pointer]:
+                - /url: https://11gauge.pages.dev/
+              - link "Source" [ref=e335] [cursor=pointer]:
+                - /url: https://github.com/shuff57/11Gauge
+        - generic [ref=e336]:
+          - heading "Loose-leaf" [level=2] [ref=e337]
+          - generic [aria-hidden] [ref=e338]: source only. the work is shown.
+        - paragraph [ref=e339]: Source on GitHub, ready to clone. Several open straight from a single HTML file. Each name opens its repository.
+        - generic [ref=e340]:
+          - heading "The classroom" [level=3] [ref=e341]
+          - list [ref=e342]:
+            - listitem [ref=e343]:
+              - generic [ref=e344]: "14."
+              - heading [level=3] [ref=e346]:
+                - link "O.G.R.E" [ref=e347] [cursor=pointer]:
+                  - /url: https://github.com/shuff57/O.G.R.E-OllamaGradingRubricEvaluator
+                  - text: O.G.R.E ↗
+              - paragraph [ref=e348]: Grades 30 written responses in minutes on a local model. No cloud.
+            - listitem [ref=e349]:
+              - generic [ref=e350]: "15."
+              - heading [level=3] [ref=e352]:
+                - link "viSHion" [ref=e353] [cursor=pointer]:
+                  - /url: https://github.com/shuff57/viSHion
+                  - text: viSHion ↗
+              - paragraph [ref=e354]: Handwriting OCR for stacks of student pages, on a local vision server.
+            - listitem [ref=e355]:
+              - generic [ref=e356]: "16."
+              - heading [level=3] [ref=e358]:
+                - link "syllabus-quickref" [ref=e359] [cursor=pointer]:
+                  - /url: https://github.com/shuff57/syllabus-quickref
+                  - text: syllabus-quickref ↗
+              - paragraph [ref=e360]: Turns a syllabus into one page a student reads in ninety seconds.
+        - generic [ref=e361]:
+          - heading "Math & making" [level=3] [ref=e362]
+          - list [ref=e363]:
+            - listitem [ref=e364]:
+              - generic [ref=e365]: "17."
+              - heading [level=3] [ref=e367]:
+                - link "reSHape CAD" [ref=e368] [cursor=pointer]:
+                  - /url: https://github.com/shuff57/reshape-cad
+                  - text: reSHape CAD ↗
+              - paragraph [ref=e369]: Plain-words CAD on its own Rust B-rep kernel. It refuses what it can’t build.
+            - listitem [ref=e370]:
+              - generic [ref=e371]: "18."
+              - heading [level=3] [ref=e373]:
+                - link "reSHape" [ref=e374] [cursor=pointer]:
+                  - /url: https://github.com/shuff57/reSHape
+                  - text: reSHape ↗
+              - paragraph [ref=e375]: Turns STL and 3MF meshes back into STEP solids with true geometry.
+        - generic [ref=e376]:
+          - heading "Home lab" [level=3] [ref=e377]
+          - list [ref=e378]:
+            - listitem [ref=e379]:
+              - generic [ref=e380]: "19."
+              - heading [level=3] [ref=e382]:
+                - link "LHD Launcher" [ref=e383] [cursor=pointer]:
+                  - /url: https://github.com/shuff57/roku-lhd-launcher
+                  - text: LHD Launcher ↗
+              - paragraph [ref=e384]: A motion-forward home screen and photo screensaver for Roku TV.
+            - listitem [ref=e385]:
+              - generic [ref=e386]: "20."
+              - heading [level=3] [ref=e388]:
+                - link "Agent-Evo" [ref=e389] [cursor=pointer]:
+                  - /url: https://github.com/shuff57/agent-evo
+                  - text: Agent-Evo ↗
+              - paragraph [ref=e390]: The agent framework behind this page. It edits itself after each session.
+      - region [ref=e391]:
+        - generic [ref=e392]:
+          - heading "Answer key" [level=2] [ref=e393]: Σ Answer key
+          - paragraph [ref=e394]: One teacher, one left hand, and a habit of fixing the thing that slowed class down.
+          - paragraph [ref=e395]:
+            - text: "Steven Huff: math educator, CS teacher and curriculum developer, ten-plus years from elementary through college. The full CV lives at"
+            - link "steven.lefthanddev.com" [ref=e396] [cursor=pointer]:
+              - /url: https://steven.lefthanddev.com/
+            - text: .
+        - list [ref=e397]:
+          - listitem [ref=e398]:
+            - heading "Why \"Left Hand\"?" [level=3] [ref=e399]
+            - paragraph [ref=e400]: Because I’m left-handed. Lefties drag their hand through wet ink, so every line gets checked twice. The smudge is a feature.
+          - listitem [ref=e401]:
+            - heading "Why the capital SH?" [level=3] [ref=e402]
+            - paragraph [ref=e403]: "They're the initials. rāSHio, bookSHelf, verSHion: the tools sign their own names."
+          - listitem [ref=e404]:
+            - heading "What's the rule?" [level=3] [ref=e405]
+            - paragraph [ref=e406]: A student should open the page, get the answer, and get back to the homework. Student data stays on the student's machine wherever possible.
+    - contentinfo [ref=e407]:
+      - generic [ref=e408]: LeftHandDev · 2026
+      - generic [aria-hidden] [ref=e409]: show your work.
+      - generic [ref=e410]:
+        - link "steven.lefthanddev.com" [ref=e411] [cursor=pointer]:
+          - /url: https://steven.lefthanddev.com/
+        - text: ·
+        - link "github.com/shuff57" [ref=e412] [cursor=pointer]:
+          - /url: https://github.com/shuff57
