@@ -390,15 +390,18 @@
     @media (max-width: 1100px) { .sheet-head .field.optional { display: none; } }
     .contact { padding: 3.5rem 0 4.5rem; border-top: 2px solid var(--ink); }
     .contact .sheet { position: relative; margin-top: 1.5rem; padding: 2rem 1.5rem 2.1rem; background: var(--card); box-shadow: var(--shadow); border-left: 6px solid var(--red); }
-    @media (min-width: 900px) { .contact .sheet { padding: 2.75rem 3rem 2.9rem; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 3rem; align-items: end; } }
-    .contact .ask { margin: 0 0 1.1rem; max-width: 44ch; font-size: 1.2rem; color: var(--ink); }
-    .contact .addr { display: inline-block; margin: 0 0 1.6rem; font-size: clamp(1.45rem, 5.2vw, 3.2rem); font-weight: 750; font-stretch: 85%; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 8px; overflow-wrap: anywhere; }
-    .contact .addr:hover { color: var(--red); }
-    @media (min-width: 900px) { .contact .addr { margin-bottom: 0; } }
-    .contact .acts { display: flex; flex-wrap: wrap; gap: 0.9rem 1.25rem; align-items: center; }
-    @media (min-width: 900px) { .contact .acts { flex-direction: column; align-items: stretch; } .contact .acts > * { justify-content: center; } }
-    .contact .copy { font: inherit; font-weight: 650; color: var(--ink); background: none; border: 1.5px solid var(--ink); border-radius: 3px; padding: 0.75rem 1.2rem; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; }
-    .contact .copy:hover { color: var(--red); border-color: var(--red); }
+    @media (min-width: 900px) { .contact .sheet { padding: 2.75rem 3rem 2.9rem; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); column-gap: 3.5rem; align-items: start; } }
+    .contact .ask { margin: 0 0 1.5rem; max-width: 34ch; font-size: clamp(1.35rem, 2.6vw, 1.9rem); font-weight: 650; font-stretch: 90%; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink); }
+    .contact .ask-sub { margin: 0 0 1.75rem; max-width: 40ch; color: var(--ink-soft); }
+    /* The shared form (contact.lefthanddev.com/embed.js), dressed in the page's own ink. */
+    .contact [data-lhd-contact] { --lhd-cf-max: none; --lhd-cf-accent: var(--red); --lhd-cf-field-bg: var(--paper); --lhd-cf-border: 1.5px solid color-mix(in srgb, var(--ink) 55%, transparent); --lhd-cf-radius: 3px; --lhd-cf-btn-bg: var(--ink); --lhd-cf-btn-fg: var(--paper); --lhd-cf-error: #b42318; }
+    :root[data-theme="dark"] .contact [data-lhd-contact] { --lhd-cf-error: #ff9b8f; }
+    .contact .lhd-cf button { box-shadow: 4px 4px 0 var(--red); transition: transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s cubic-bezier(.16,1,.3,1); }
+    .contact .lhd-cf button:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--red); }
+    .contact .lhd-cf label { font-family: var(--mono); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.01em; }
+    .contact .lhd-cf input, .contact .lhd-cf textarea { font-family: var(--sans); font-size: 1.05rem; }
+    .contact .lhd-cf-done p:first-child { font-family: var(--hand); font-size: 2rem; color: var(--red); line-height: 1.1; }
+    .contact noscript p { margin: 0; color: var(--ink-soft); }
     .contact .sheet .note { position: absolute; top: -1.15rem; right: 1.25rem; font-size: 1.6rem; rotate: -3deg; }
     @media (max-width: 759px) { .contact .sheet .note { display: none; } }
     footer { border-top: 2px solid var(--ink); padding: 1.5rem 0 3rem; display: grid; grid-template-columns: 1fr; gap: 0.75rem; align-items: baseline; font-family: var(--mono); font-size: 0.9rem; color: var(--ink-soft); }
@@ -632,12 +635,11 @@
         <div class="sheet">
           <span class="note" aria-hidden="true">office hours: open</span>
           <div>
-            <p class="ask">A question about one of the tools, a bug to report, or a classroom that wants to try something? Write to me.</p>
-            <a class="addr" href="mailto:shuff57@lefthanddev.com">shuff57@<wbr>lefthanddev.com</a>
+            <p class="ask">A question about one of the tools, a bug to report, or a classroom that wants to try something?</p>
+            <p class="ask-sub">Write it here. It comes straight to me, and my reply goes to the email you give.</p>
           </div>
-          <div class="acts">
-            <a class="btn" href="mailto:shuff57@lefthanddev.com">Email me <span aria-hidden="true">&rarr;</span></a>
-            <button type="button" class="copy" id="copy-addr" data-addr="shuff57@lefthanddev.com">Copy address</button>
+          <div data-lhd-contact data-site="lhd" data-button="Send it">
+            <noscript><p>The contact form needs JavaScript turned on.</p></noscript>
           </div>
         </div>
       </section>
@@ -646,7 +648,7 @@
     <footer>
       <span>LeftHandDev &middot; <span id="year">2026</span></span>
       <span class="note" aria-hidden="true">show your work.</span>
-      <span class="flinks"><a href="mailto:shuff57@lefthanddev.com">Contact</a><a href="https://steven.lefthanddev.com/">Steven&#8217;s CV</a><a href="https://github.com/shuff57">GitHub</a></span>
+      <span class="flinks"><a href="#contact">Contact</a><a href="https://steven.lefthanddev.com/">Steven&#8217;s CV</a><a href="https://github.com/shuff57">GitHub</a></span>
     </footer>
   </div>
 
@@ -671,18 +673,6 @@
       paint();
       tb.addEventListener('click', () => { const t = root.dataset.theme === 'dark' ? 'light' : 'dark'; root.dataset.theme = t; try { localStorage.setItem('lhd-theme', t); } catch (e) {} paint(); });
       matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { let saved = null; try { saved = localStorage.getItem('lhd-theme'); } catch (_) {} if (!saved) { root.dataset.theme = e.matches ? 'dark' : 'light'; paint(); } });
-
-      // Copy the contact address; the label confirms it, and a screen reader hears the change.
-      const cb = document.getElementById('copy-addr');
-      if (cb) {
-        cb.setAttribute('aria-live', 'polite');
-        cb.addEventListener('click', async () => {
-          let ok = false;
-          try { await navigator.clipboard.writeText(cb.dataset.addr); ok = true; } catch (e) {}
-          cb.textContent = ok ? 'Copied' : cb.dataset.addr;
-          setTimeout(() => { cb.textContent = 'Copy address'; }, 2200);
-        });
-      }
 
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -720,5 +710,6 @@
       }
     })();
   </script>
+  <script src="https://contact.lefthanddev.com/embed.js" defer></script>
 </body>
 </html>
